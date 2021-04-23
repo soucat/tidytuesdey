@@ -34,4 +34,27 @@ include(GNUInstallDirs)
 ######## Configuration
 
 option(BUILD_BINARY "Build executable" ON)
-option(B
+option(BUILD_SHARED_LIBS "Build shared library and link executable to it" ON)
+
+if (BUILD_SHARED_LIBS)
+	option(BUILD_STATIC "Build static library" ON)
+endif (BUILD_SHARED_LIBS)
+
+configure_file(
+	uchardet.pc.in
+	uchardet.pc
+	@ONLY
+)
+
+install(
+	FILES
+		${CMAKE_BINARY_DIR}/uchardet.pc
+	DESTINATION
+		${CMAKE_INSTALL_LIBDIR}/pkgconfig
+)
+
+######## Subdirectories
+
+add_subdirectory(src)
+add_subdirectory(doc)
+add_subdirectory(test)
