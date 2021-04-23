@@ -12,4 +12,26 @@ set (UCHARDET_VERSION_MINOR 0)
 set (UCHARDET_VERSION_REVISION 6)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-	set (versi
+	set (version_suffix .debug)
+endif (CMAKE_BUILD_TYPE MATCHES Debug)
+
+set (
+	UCHARDET_VERSION
+	${UCHARDET_VERSION_MAJOR}.${UCHARDET_VERSION_MINOR}.${UCHARDET_VERSION_REVISION}${version_suffix}
+)
+
+######## Windows
+
+#if (WIN32)
+#	set(CMAKE_SHARED_LIBRARY_PREFIX ${CMAKE_INSTALL_PREFIX})
+#	set(CMAKE_STATIC_LIBRARY_PREFIX ${CMAKE_INSTALL_PREFIX})
+#endif (WIN32)
+
+######## Directory
+
+include(GNUInstallDirs)
+
+######## Configuration
+
+option(BUILD_BINARY "Build executable" ON)
+option(B
