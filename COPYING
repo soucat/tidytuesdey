@@ -55,4 +55,11 @@
      License is not already Covered Code governed by this License.
 
      1.10.1. "Patent Claims" means any patent claim(s), now owned or
-     hereafter acquired
+     hereafter acquired, including without limitation,  method, process,
+     and apparatus claims, in any patent Licensable by grantor.
+
+     1.11. "Source Code" means the preferred form of the Covered Code for
+     making modifications to it, including all modules it contains, plus
+     any associated interface definition files, scripts used to control
+     compilation and installation of an Executable, or source code
+     differential comparisons against either the Original
