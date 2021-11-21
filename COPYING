@@ -894,4 +894,12 @@ the library.
 
   We call this license the "Lesser" General Public License because it
 does Less to protect the user's freedom than the ordinary General
-P
+Public License.  It also provides other free software developers Less
+of an advantage over competing non-free programs.  These disadvantages
+are the reason we use the ordinary General Public License for many
+libraries.  However, the Lesser license provides advantages in certain
+special circumstances.
+
+  For example, on rare occasions, there may be a special need to
+encourage the widest possible use of a certain library, so that it becomes
+a de-facto standard.  To achieve this, non-free prog
