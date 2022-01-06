@@ -11,4 +11,15 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7DF9952B76987F54D66D74171482E11FAF33FDCB</key>
-		<string>https://www.freedesktop.org/wiki
+		<string>https://www.freedesktop.org/wiki/Software/uchardet/</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>build-mac/uchardet.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7DF9952B76987F54D66D74171482E11FAF33FDCB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://www.freedesktop.org/wiki/Software/uchardet/</string>
+	<key>IDESourceControlP
