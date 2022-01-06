@@ -349,3 +349,196 @@
 				BD4995F219F84868000945BC /* JpCntx.cpp in Sources */,
 				BD4995FA19F84868000945BC /* nsCharSetProber.cpp in Sources */,
 				BD4995FB19F84868000945BC /* nsEscCharsetProber.cpp in Sources */,
+				BD4995FE19F84868000945BC /* nsEUCKRProber.cpp in Sources */,
+				BD4995F919F84868000945BC /* nsBig5Prober.cpp in Sources */,
+				BD4995F119F84868000945BC /* CharDistribution.cpp in Sources */,
+				BD49960019F84868000945BC /* nsGB2312Prober.cpp in Sources */,
+				BD49960219F84868000945BC /* nsLatin1Prober.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD49961219FC04E8000945BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD49961319FC04E8000945BC /* nsMBCSGroupProber.cpp in Sources */,
+				BD49961419FC04E8000945BC /* LangCyrillicModel.cpp in Sources */,
+				BD49961519FC04E8000945BC /* uchardet.cpp in Sources */,
+				BD49961619FC04E8000945BC /* nsSJISProber.cpp in Sources */,
+				BD49961719FC04E8000945BC /* nsHebrewProber.cpp in Sources */,
+				BD49961819FC04E8000945BC /* nsSBCSGroupProber.cpp in Sources */,
+				BD49961919FC04E8000945BC /* nsMBCSSM.cpp in Sources */,
+				BD49961A19FC04E8000945BC /* LangBulgarianModel.cpp in Sources */,
+				BD49961B19FC04E8000945BC /* LangHebrewModel.cpp in Sources */,
+				BD49961C19FC04E8000945BC /* nsEUCTWProber.cpp in Sources */,
+				BD49961D19FC04E8000945BC /* LangThaiModel.cpp in Sources */,
+				BD49961E19FC04E8000945BC /* uchardet.cpp in Sources */,
+				BD49961F19FC04E8000945BC /* nsEscSM.cpp in Sources */,
+				BD49962019FC04E8000945BC /* nsUTF8Prober.cpp in Sources */,
+				BD49962119FC04E8000945BC /* LangGreekModel.cpp in Sources */,
+				BD49962219FC04E8000945BC /* nsUniversalDetector.cpp in Sources */,
+				BD49962319FC04E8000945BC /* nsSBCharSetProber.cpp in Sources */,
+				BD49962419FC04E8000945BC /* LangHungarianModel.cpp in Sources */,
+				BD49962519FC04E8000945BC /* nsEUCJPProber.cpp in Sources */,
+				BD49962619FC04E8000945BC /* JpCntx.cpp in Sources */,
+				BD49962719FC04E8000945BC /* nsCharSetProber.cpp in Sources */,
+				BD49962819FC04E8000945BC /* nsEscCharsetProber.cpp in Sources */,
+				BD49962919FC04E8000945BC /* nsEUCKRProber.cpp in Sources */,
+				BD49962A19FC04E8000945BC /* nsBig5Prober.cpp in Sources */,
+				BD49962B19FC04E8000945BC /* CharDistribution.cpp in Sources */,
+				BD49962C19FC04E8000945BC /* nsGB2312Prober.cpp in Sources */,
+				BD49962D19FC04E8000945BC /* nsLatin1Prober.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BD4995AE19F84840000945BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BD4995AF19F84840000945BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD4995B119F84840000945BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BD4995B219F84840000945BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BD49963219FC04E8000945BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "uchardet-ios";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BD49963319FC04E8000945BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "uchardet-ios";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD49959719F84840000945BC /* Build configuration list for PBXProject "uchardet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4995AE19F84840000945BC /* Debug */,
+				BD4995AF19F84840000945BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD4995B019F84840000945BC /* Build configuration list for PBXNativeTarget "uchardet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4995B119F84840000945BC /* Debug */,
+				BD4995B219F84840000945BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD49963119FC04E8000945BC /* Build configuration list for PBXNativeTarget "uchardet-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD49963219FC04E8000945BC /* Debug */,
+				BD49963319FC04E8000945BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD49959419F84840000945BC /* Project object */;
+}
