@@ -10,4 +10,15 @@
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchi
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD49961119FC04E8000945BC"
+               BuildableName = "libuchardet-ios.a"
+               BlueprintName = "uchardet-ios"
+               ReferencedContainer = "container:uchardet.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </B
