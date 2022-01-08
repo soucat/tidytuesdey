@@ -33,4 +33,9 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>7DF9952B76987F54D66D74171482E11FAF33FDCB</string>
-			<key>IDESourceCon
+			<key>IDESourceControlWCCName</key>
+			<string>uchardet</string>
+		</dict>
+	</array>
+</dict>
+</plist>
