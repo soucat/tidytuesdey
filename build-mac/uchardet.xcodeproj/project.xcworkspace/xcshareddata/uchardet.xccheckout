@@ -22,4 +22,15 @@
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://www.freedesktop.org/wiki/Software/uchardet/</string>
-	<key>IDESourceControlP
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7DF9952B76987F54D66D74171482E11FAF33FDCB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7DF9952B76987F54D66D74171482E11FAF33FDCB</string>
+			<key>IDESourceCon
