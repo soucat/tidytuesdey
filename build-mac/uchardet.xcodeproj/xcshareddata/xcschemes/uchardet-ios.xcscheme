@@ -60,4 +60,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier
+            BlueprintIdentifier = "BD49961119FC04E8000945BC"
+            BuildableName = "libuchardet-ios.a"
+            BlueprintName = "uchardet-ios"
+            ReferencedContainer = "container:uchardet.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
