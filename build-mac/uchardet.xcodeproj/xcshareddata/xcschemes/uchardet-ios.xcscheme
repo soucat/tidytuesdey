@@ -45,4 +45,19 @@
             BlueprintIdentifier = "BD49961119FC04E8000945BC"
             BuildableName = "libuchardet-ios.a"
             BlueprintName = "uchardet-ios"
-            ReferencedContainer = "contain
+            ReferencedContainer = "container:uchardet.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier
