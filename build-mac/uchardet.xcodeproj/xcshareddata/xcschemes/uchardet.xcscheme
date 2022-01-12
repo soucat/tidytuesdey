@@ -12,4 +12,15 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
-            <BuildableRefer
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD49959B19F84840000945BC"
+               BuildableName = "libuchardet.a"
+               BlueprintName = "uchardet"
+               ReferencedContainer = "container:uchardet.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debug
