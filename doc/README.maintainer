@@ -41,3 +41,16 @@ Cf. EXAMPLES section in `git help archive`.
 * Compute a SHA1 checksum:
 
     sha1sum uchardet-x.y.x.tar.xz > uchardet-x.y.z.tar.xz.sha1
+
+* Upload to annarchy download server:
+
+    scp uchardet-x.y.x.tar.xz uchardet-x.y.z.tar.xz.sha1 annarchy.freedesktop.org:/srv/www.freedesktop.org/www/software/uchardet/releases/
+
+  The archive and its checksum file should now be available from:
+  https://www.freedesktop.org/software/uchardet/releases/
+
+* Update the wiki page: https://www.freedesktop.org/wiki/Software/uchardet/
+  The release note will be the tag content:
+  https://cgit.freedesktop.org/uchardet/uchardet/tag/?h=vx.y.z
+
+* Spread the good news!
