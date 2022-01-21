@@ -49,4 +49,17 @@
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
-      </
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "BD49959B19F84840000945BC"
+            BuildableName = "libuchardet.a"
+            Bl
