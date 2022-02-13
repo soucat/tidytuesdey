@@ -1,1 +1,13 @@
-# 
+# Supporting new or Updating languages #
+
+We generate statistical language data using Wikipedia as natural
+language text resource.
+
+Right now, we have automated scripts only to generate statistical data
+for single-byte encodings. Multi-byte encodings usually requires more
+in-depth knowledge of its specification.
+
+## New single-byte encoding ##
+
+Uchardet uses language data, and therefore rather than supporting a
+charset, we in fact support a couple (
