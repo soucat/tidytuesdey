@@ -19,4 +19,13 @@ This is why, though less flexible, it also makes uchardet much more
 accurate than other detection system, as well as making it an efficient
 language recognition system.
 Since many single-byte charsets actually share the same layout (or very
-similar ones), it 
+similar ones), it is actually impossible to have an accurate single-byte
+encoding detector for random text.
+
+Therefore you need to describe the language and the codepoint layouts of
+every charset you want to add support for.
+
+I recommend having a look at langs/fr.py which is heavily commented as
+a base of a new language description, and charsets/windows-1252.py as a
+base for a new charset layout (note that charset layouts can be shared
+between languages. If yours
