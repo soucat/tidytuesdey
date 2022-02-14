@@ -28,4 +28,20 @@ every charset you want to add support for.
 I recommend having a look at langs/fr.py which is heavily commented as
 a base of a new language description, and charsets/windows-1252.py as a
 base for a new charset layout (note that charset layouts can be shared
-between languages. If yours
+between languages. If yours is already there, you have nothing to do).
+The important name in the charset file are:
+
+- `name`: an iconv-compatible name.
+- `charmap`: fill it with CTR (control character), SYM (symbol), NUM
+             (number), LET (letter), ILL (illegal codepoint).
+
+## Tools ##
+
+You must install Python 3 and the [`Wikipedia` Python
+tool](https://github.com/goldsmith/Wikipedia).
+
+## Run script ##
+
+Let's say you added (or modified) support for French (`fr`), run:
+
+> 
