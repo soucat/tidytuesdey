@@ -10,4 +10,13 @@ in-depth knowledge of its specification.
 ## New single-byte encoding ##
 
 Uchardet uses language data, and therefore rather than supporting a
-charset, we in fact support a couple (
+charset, we in fact support a couple (language, charset). So for
+instance if uchardet supports (French, ISO-8859-15), it should be able
+to recognize French text encoded in ISO-8859-15, but may fail at
+detecting ISO-8859-15 for non-supported languages.
+
+This is why, though less flexible, it also makes uchardet much more
+accurate than other detection system, as well as making it an efficient
+language recognition system.
+Since many single-byte charsets actually share the same layout (or very
+similar ones), it 
