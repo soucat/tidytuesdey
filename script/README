@@ -44,4 +44,16 @@ tool](https://github.com/goldsmith/Wikipedia).
 
 Let's say you added (or modified) support for French (`fr`), run:
 
-> 
+> ./BuildLangModel.py fr --max-page=100 --max-depth=4
+
+The options can be changed to any value. Bigger values mean the script
+will process more data, so more processing time now, but uchardet may
+possibly be more accurate in the end.
+
+## Updating core code ##
+
+If you were only updating data for a language model, you have nothing
+else to do. Just build `uchardet` again and test it.
+
+If you were creating new models though, you will have to add these in
+src/n
