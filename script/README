@@ -56,4 +56,8 @@ If you were only updating data for a language model, you have nothing
 else to do. Just build `uchardet` again and test it.
 
 If you were creating new models though, you will have to add these in
-src/n
+src/nsSBCSGroupProber.cpp and src/nsSBCharSetProber.h, and increase the
+value of `NUM_OF_SBCS_PROBERS` in src/nsSBCSGroupProber.h.
+Finally add the new file in src/CMakeLists.txt.
+
+I will be looking to make this step more straightforward in the future.
