@@ -33,4 +33,21 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipient may use your version of this file
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+# Illegal codepoints.
+ILL = 255
+# Control characters
+CTR = 254
+# Symbols and punctuations.
+SYM = 253
+# Return/Line feeds.
+RET = 252
+# Numbers 0-9.
+NUM = 251
+
+# Letters (should be all the rest).
+LET = 0
