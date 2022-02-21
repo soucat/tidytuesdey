@@ -50,4 +50,19 @@ def load(charset_names):
     charset database.
 
     :param charset_names: a list of supported charset names.
-    :return: a dictionary wit
+    :return: a dictionary with all the loaded charsets.
+    :rtype: dict
+    '''
+    charsets = {}
+
+    # Temporarily change the search path for modules.
+    sys_path_backup = sys.path
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    sys.path = [current_dir + '/../charsets']
+
+    for name in charset_names:
+        try:
+            charset = importlib.import_module(name.lower())
+        except ImportError:
+            print('Unknown charset "{}": '
+                  'file 
