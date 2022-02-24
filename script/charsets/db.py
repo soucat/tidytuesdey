@@ -65,4 +65,9 @@ def load(charset_names):
             charset = importlib.import_module(name.lower())
         except ImportError:
             print('Unknown charset "{}": '
-                  'file 
+                  'file "charsets/{}.py" does not exist.'.format(name, name.lower()))
+            exit(1)
+        charsets[charset.name] = charset
+    # Set back the default module paths.
+    sys.path = sys_path_backup
+    return charsets
