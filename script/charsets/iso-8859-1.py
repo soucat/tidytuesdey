@@ -33,4 +33,16 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+from codepoints import *
+
+# ISO-8859-1 is the full 8-bit range, IANA-defined, superset of ISO/CEI 8859-1.
+# It is basically the same as ISO/CEI 8859-1, but with control characters.
+# As far as I can see, `iconv` has no support for the ISO/CEI 8859-1 subset,
+# so there is no need for us to support it anyway.
+
+name = 'ISO-885
