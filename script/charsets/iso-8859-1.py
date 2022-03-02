@@ -56,4 +56,15 @@ language = \
     # compatible with ISO-8859-1 (ex: Kurdish).
     # Some don't have a ISO language code (like Leonese, for which I used
     # a Glottolog code).
-    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 
+    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 'en', 'fo', 'gl', 'de',
+                  'is', 'id', 'it', 'ku', 'leon1250', 'lb', 'ms', 'gv', 'no',
+                  'oc', 'pt', 'rm', 'gd', 'es', 'sw', 'sv', 'wa' ],
+    'incomplete': [ 'ca', 'cs', 'nl', 'et', 'fi', 'fr', 'gn', 'hu', 'ga',
+                    'la', 'mi', 'ro', 'tr', 'cy' ]
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR
