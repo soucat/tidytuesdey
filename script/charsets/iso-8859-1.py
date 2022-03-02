@@ -45,4 +45,15 @@ from codepoints import *
 # As far as I can see, `iconv` has no support for the ISO/CEI 8859-1 subset,
 # so there is no need for us to support it anyway.
 
-name = 'ISO-885
+name = 'ISO-8859-1'
+aliases = ['ISO_8859-1:1987', 'ISO_8859-1', 'iso-ir-100',
+           'csISOLatin1', 'latin1', 'l1', 'IBM819', 'CP819']
+
+language = \
+{
+    # Languages with complete coverage.
+    # Some languages actually have several alphabets and only one of them is
+    # compatible with ISO-8859-1 (ex: Kurdish).
+    # Some don't have a ISO language code (like Leonese, for which I used
+    # a Glottolog code).
+    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 
