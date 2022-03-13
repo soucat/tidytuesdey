@@ -31,4 +31,15 @@
 # of those above. If you wish to allow use of your version of this file only
 # under the terms of either the GPL or the LGPL, and not to allow others to
 # use your version of this file under the terms of the MPL, indicate your
-# decision by deleting the provisions above and replace th
+# decision by deleting the provisions above and replace them with the notice
+# and other provisions required by the GPL or the LGPL. If you do not delete
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+from codepoints import *
+
+# ISO-8859-15 is the full 8-bit range, IANA-defined, superset of ISO/CEI 8859-15.
+# It is basically the same as ISO/CEI 8859-15, but with control characters.
+# As far as I can see, `iconv
