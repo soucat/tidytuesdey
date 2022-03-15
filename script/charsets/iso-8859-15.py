@@ -54,4 +54,15 @@ language = \
     'complete': [ 'af', 'sq', 'br', 'ca', 'da', 'nl', 'en', 'et', 'fo', 'fi',
                   'fr', 'gl', 'de', 'is', 'ga', 'it', 'ku', 'la', 'lb', 'ms',
                   'no', 'oc', 'pt', 'rm', 'gd', 'sco', 'es', 'sw', 'sv', 'tl',
-                  
+                  'wa' ],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, # 1X
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # 2X
+    NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, # 3X
+    SYM,LET,LET,LET,LET,LE
