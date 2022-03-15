@@ -42,4 +42,16 @@ from codepoints import *
 
 # ISO-8859-15 is the full 8-bit range, IANA-defined, superset of ISO/CEI 8859-15.
 # It is basically the same as ISO/CEI 8859-15, but with control characters.
-# As far as I can see, `iconv
+# As far as I can see, `iconv` has no support for the ISO/CEI 8859-15 subset,
+# so there is no need for us to support it anyway.
+
+name = 'ISO-8859-15'
+aliases = ['ISO_8859-15', 'csISO885915', 'Latin-9']
+
+language = \
+{
+    # Languages with complete coverage.
+    'complete': [ 'af', 'sq', 'br', 'ca', 'da', 'nl', 'en', 'et', 'fo', 'fi',
+                  'fr', 'gl', 'de', 'is', 'ga', 'it', 'ku', 'la', 'lb', 'ms',
+                  'no', 'oc', 'pt', 'rm', 'gd', 'sco', 'es', 'sw', 'sv', 'tl',
+                  
