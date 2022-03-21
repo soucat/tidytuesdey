@@ -31,4 +31,19 @@
 # of those above. If you wish to allow use of your version of this file only
 # under the terms of either the GPL or the LGPL, and not to allow others to
 # use your version of this file under the terms of the MPL, indicate your
-# decision by deleting the provisions above and r
+# decision by deleting the provisions above and replace them with the notice
+# and other provisions required by the GPL or the LGPL. If you do not delete
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+from codepoints import *
+
+name = 'ISO-8859-2'
+aliases = ['ISO_8859-2:1987', 'ISO_8859-2', 'iso-ir-101',
+           'csISOLatin2', 'latin2', 'l2']
+
+language = \
+{
+    'complete': [ 'bs', 'hr', '
