@@ -38,4 +38,21 @@
 #
 # ##### END LICENSE BLOCK #####
 
-from c
+from codepoints import *
+
+name = 'ISO-8859-6'
+aliases = ['ISO_8859-6:1987', 'ISO_8859-6', 'iso-ir-127',
+           'ECMA-114', 'ASMO-708', 'arabic', 'csISOLatinArabic']
+
+language = \
+{
+    # Dedicated to Arabic.
+    'complete': [ 'ar' ],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,
