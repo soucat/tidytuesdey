@@ -38,4 +38,21 @@
 #
 # ##### END LICENSE BLOCK #####
 
-from co
+from codepoints import *
+
+name = 'ISO-8859-7'
+aliases = ['ISO_8859-7:1987', 'ISO_8859-7', 'iso-ir-126',
+           'ELOT_928', 'ECMA-118', 'greek', 'greek8', 'csISOLatinGreek']
+
+language = \
+{
+    # Dedicated to modern Greek.
+    'complete': [ 'el' ],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CT
