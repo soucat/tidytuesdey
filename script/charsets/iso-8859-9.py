@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -40,14 +41,17 @@
 
 from codepoints import *
 
-name = 'ISO-8859-7'
-aliases = ['ISO_8859-7:1987', 'ISO_8859-7', 'iso-ir-126',
-           'ELOT_928', 'ECMA-118', 'greek', 'greek8', 'csISOLatinGreek']
+# ISO-8859-5 is the full 8-bit range, IANA-defined, superset of ISO/CEI 8859-5.
+# It is basically the same as ISO/CEI 8859-5, but with control characters.
+
+name = 'ISO-8859-9'
+aliases = ['ISO_8859-9:1989', 'ISO_8859-9', 'iso-ir-148',
+           'csISOLatin5', 'latin5', 'l5']
 
 language = \
 {
-    # Dedicated to modern Greek.
-    'complete': [ 'el' ],
+    # Specifically made to cover Turkish.
+    'complete': [ 'tr' ],
     'incomplete': []
 }
 
@@ -64,10 +68,10 @@ charmap = \
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,SYM,SYM,SYM,SYM,CTR, # 7X
     CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, # 8X
     CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, # 9X
-    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM, # AX
-    SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,LET,LET,SYM,LET,SYM,LET,LET, # BX
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # AX
+    SYM,SYM,SYM,SYM,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # BX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # CX
-    LET,LET,ILL,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # DX
+    LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # DX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # EX
-    LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,ILL, # FX
+    LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # FX
 ]
