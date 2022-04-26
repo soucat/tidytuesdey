@@ -42,3 +42,18 @@ from codepoints import *
 
 name = 'VISCII'
 aliases = ['csVISCII']
+
+language = \
+{
+    # Dedicated to Vietnamese.
+    'complete': ['vi'],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,LET,CTR,CTR,LET,LET,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,LET,CTR,CTR,CTR,CTR,LET,CTR,CTR,CTR,CTR,LET,CTR, # 1X
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # 2X
+    NUM,NUM,NUM,NUM,NUM,NUM,NUM,N
