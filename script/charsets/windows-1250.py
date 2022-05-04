@@ -41,4 +41,16 @@
 from codepoints import *
 
 name = 'WINDOWS-1250'
-aliases = ['cswindows1250
+aliases = ['cswindows1250']
+
+language = \
+{
+    # used under Microsoft Windows to represent texts in Central European and
+    # Eastern European languages that use Latin script, such as Polish, Czech,
+    # Slovak, Hungarian, Slovene, Bosnian, Croatian, Serbian (Latin script),
+    # Romanian (before 1993 spelling reform) and Albanian.
+    'complete': [ 'pl', 'hu', 'sl', 'bs', 'hr', 'sr', 'ro', 'sq', 'de' ],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  
