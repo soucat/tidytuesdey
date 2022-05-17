@@ -33,4 +33,19 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions ab
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+from codepoints import *
+
+name = 'WINDOWS-1252'
+aliases = ['CP-1252', 'cswindows1252']
+
+language = \
+{
+    # Languages with complete coverage.
+    # Basically a mix of ISO-8859-1 and ISO-8859-15.
+    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 'en', 'fo', 'gl', 'de',
+                  'is', 'id', 'it', 'ku', 'le
