@@ -48,4 +48,15 @@ language = \
     # Languages with complete coverage.
     # Basically a mix of ISO-8859-1 and ISO-8859-15.
     'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 'en', 'fo', 'gl', 'de',
-                  'is', 'id', 'it', 'ku', 'le
+                  'is', 'id', 'it', 'ku', 'leon1250', 'lb', 'ms', 'gv', 'no',
+                  'oc', 'pt', 'rm', 'gd', 'es', 'sw', 'sv', 'wa', 'ca', 'et',
+                  'fi', 'fr', 'ga', 'la' ],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, # 1X
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SY
