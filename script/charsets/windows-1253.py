@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -40,17 +41,13 @@
 
 from codepoints import *
 
-name = 'WINDOWS-1252'
-aliases = ['CP-1252', 'cswindows1252']
+name = 'WINDOWS-1253'
+aliases = ['cswindows1253']
 
 language = \
 {
-    # Languages with complete coverage.
-    # Basically a mix of ISO-8859-1 and ISO-8859-15.
-    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 'en', 'fo', 'gl', 'de',
-                  'is', 'id', 'it', 'ku', 'leon1250', 'lb', 'ms', 'gv', 'no',
-                  'oc', 'pt', 'rm', 'gd', 'es', 'sw', 'sv', 'wa', 'ca', 'et',
-                  'fi', 'fr', 'ga', 'la' ],
+    # Greek support.
+    'complete': ['el'],
     'incomplete': []
 }
 
@@ -65,12 +62,12 @@ charmap = \
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,SYM,SYM,SYM,SYM,SYM, # 5X
     SYM,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # 6X
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,SYM,SYM,SYM,SYM,CTR, # 7X
-    SYM,ILL,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,ILL,LET,ILL, # 8X
-    ILL,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,ILL,LET,LET, # 9X
-    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # AX
-    SYM,SYM,SYM,SYM,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # BX
+    SYM,ILL,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM,ILL,SYM,ILL,ILL,ILL,ILL, # 8X
+    ILL,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM,ILL,SYM,ILL,ILL,ILL,ILL, # 9X
+    SYM,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM,SYM,SYM,SYM,SYM, # AX
+    SYM,SYM,SYM,SYM,SYM,LET,SYM,SYM,LET,LET,LET,SYM,LET,SYM,LET,LET, # BX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # CX
-    LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # DX
+    LET,LET,ILL,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # DX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # EX
-    LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # FX
+    LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,ILL, # FX
 ]

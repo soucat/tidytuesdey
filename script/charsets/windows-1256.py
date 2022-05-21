@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -40,17 +41,16 @@
 
 from codepoints import *
 
-name = 'WINDOWS-1252'
-aliases = ['CP-1252', 'cswindows1252']
+name = 'WINDOWS-1256'
+aliases = ['cswindows1256']
 
 language = \
 {
-    # Languages with complete coverage.
-    # Basically a mix of ISO-8859-1 and ISO-8859-15.
-    'complete': [ 'af', 'sq', 'eu', 'br', 'co', 'da', 'en', 'fo', 'gl', 'de',
-                  'is', 'id', 'it', 'ku', 'leon1250', 'lb', 'ms', 'gv', 'no',
-                  'oc', 'pt', 'rm', 'gd', 'es', 'sw', 'sv', 'wa', 'ca', 'et',
-                  'fi', 'fr', 'ga', 'la' ],
+    # Dedicated to Arabic (and possibly some other languages that use Arabic
+    # script, like Persian and Urdu).
+    # Also contains some French characters for colonial historic reasons
+    # (upper-case letters with diacritics were not included).
+    'complete': ['ar', 'fr', 'fa', 'ur'],
     'incomplete': []
 }
 
@@ -65,12 +65,12 @@ charmap = \
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,SYM,SYM,SYM,SYM,SYM, # 5X
     SYM,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # 6X
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,SYM,SYM,SYM,SYM,CTR, # 7X
-    SYM,ILL,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,ILL,LET,ILL, # 8X
-    ILL,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,ILL,LET,LET, # 9X
-    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # AX
-    SYM,SYM,SYM,SYM,SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # BX
+    SYM,LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,LET,LET,LET, # 8X
+    LET,SYM,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,LET,SYM,LET,SYM,SYM,LET, # 9X
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,LET,SYM,SYM,SYM,SYM,SYM, # AX
+    SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, # BX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # CX
     LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # DX
     LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET,LET, # EX
-    LET,LET,LET,LET,LET,LET,LET,SYM,LET,LET,LET,LET,LET,LET,LET,LET, # FX
+    SYM,SYM,SYM,SYM,LET,SYM,SYM,SYM,SYM,LET,SYM,LET,LET,SYM,SYM,LET, # FX
 ]
