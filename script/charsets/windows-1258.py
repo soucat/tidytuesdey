@@ -33,4 +33,26 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipient may use your version of this file unde
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+from codepoints import *
+
+name = 'WINDOWS-1258'
+aliases = ['cswindows1258']
+
+language = \
+{
+    # Dedicated to Vietnamese.
+    'complete': ['vi'],
+    'incomplete': []
+}
+
+#   X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF   #
+charmap = \
+[
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, # 0X
+    CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, # 1X
+    
