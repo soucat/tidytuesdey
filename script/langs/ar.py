@@ -19,4 +19,13 @@
 # The Initial Developer of the Original Code is
 # Netscape Communications Corporation.
 # Portions created by the Initial Developer are Copyright (C) 2001
-# the Initial Devel
+# the Initial Developer. All Rights Reserved.
+#
+# Contributor(s):
+#          Jehan <jehan@girinstud.io>
+#
+# Alternatively, the contents of this file may be used under the terms of
+# either the GNU General Public License Version 2 or later (the "GPL"), or
+# the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+# in which case the provisions of the GPL or the LGPL are applicable instead
+# of those above. If you wish to allow use of yo
