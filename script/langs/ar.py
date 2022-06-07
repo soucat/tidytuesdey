@@ -34,4 +34,24 @@
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
 # the provisions above, a recipient may use your version of this file under
-# the terms of any one of the MPL, the GPL or th
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+import re
+
+## Mandatory Properties ##
+
+name = 'Arabic'
+code = 'ar'
+use_ascii = False
+charsets = ['ISO-8859-6', 'WINDOWS-1256']
+
+## Optional Properties ##
+
+# No alphabet. Arabic is complicated because letters have different
+# forms (glyphs) depending on positions. Some charsets would encode
+# glyphs while others would encode only the forms. In doubt, I will
+# just let the defaults for now.
+
+start_pages = ['الصفحة_الرئيس
