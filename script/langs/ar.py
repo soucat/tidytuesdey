@@ -54,4 +54,6 @@ charsets = ['ISO-8859-6', 'WINDOWS-1256']
 # glyphs while others would encode only the forms. In doubt, I will
 # just let the defaults for now.
 
-start_pages = ['الصفحة_الرئيس
+start_pages = ['الصفحة_الرئيسية']
+wikipedia_code = code
+case_mapping = False
