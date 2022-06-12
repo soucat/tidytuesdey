@@ -66,4 +66,4 @@ wikipedia_code = code
 # 'a' and 'A' will be considered the same character, and so on.
 # This uses Python algorithm to determine upper/lower-case of a given
 # character.
-ca
+case_mapping = True
