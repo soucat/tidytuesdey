@@ -44,4 +44,17 @@ import re
 
 # The human name for the language, in English.
 name = 'German'
-# Use 2-letter ISO 639-1 
+# Use 2-letter ISO 639-1 if possible, 3-letter ISO code otherwise,
+# or use another catalog as a last resort.
+code = 'de'
+# ASCII characters are also used in French.
+use_ascii = True
+# The charsets we want to support and create data for.
+charsets = ['ISO-8859-1', 'WINDOWS-1252']
+
+## Optional Properties ##
+
+# Alphabet characters.
+# If use_ascii=True, there is no need to add any ASCII characters.
+# If case_mapping=True, there is no need to add several cases of a same
+# character (provided Python algor
