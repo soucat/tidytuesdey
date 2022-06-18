@@ -34,4 +34,24 @@
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
 # the provisions above, a recipient may use your version of this file under
-# the terms of any one of the MPL, the GPL or th
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+import re
+
+## Mandatory Properties ##
+
+# The human name for the language, in English.
+name = 'Spanish'
+# Use 2-letter ISO 639-1 if possible, 3-letter ISO code otherwise,
+# or use another catalog as a last resort.
+code = 'es'
+# ASCII characters are also used in French.
+use_ascii = True
+# The charsets we want to support and create data for.
+charsets = ['ISO-8859-15', 'ISO-8859-1', 'WINDOWS-1252']
+
+## Optional Properties ##
+
+# Alphabet 
