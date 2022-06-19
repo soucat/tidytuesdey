@@ -54,4 +54,14 @@ charsets = ['ISO-8859-15', 'ISO-8859-1', 'WINDOWS-1252']
 
 ## Optional Properties ##
 
-# Alphabet 
+# Alphabet characters.
+# If use_ascii=True, there is no need to add any ASCII characters.
+# If case_mapping=True, there is no need to add several cases of a same
+# character (provided Python algorithms know the right cases).
+alphabet = 'ñáéíóúü'
+# The start page. Though optional, it is advised to choose one yourself.
+start_pages = ['Wikipedia:Portada']
+# give possibility to select another code for the Wikipedia URL.
+wikipedia_code = code
+# 'a' and 'A' will be considered the same character, and so on.
+# Th
