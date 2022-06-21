@@ -1,3 +1,4 @@
+
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
@@ -43,24 +44,21 @@ import re
 ## Mandatory Properties ##
 
 # The human name for the language, in English.
-name = 'Spanish'
+name = 'Hungarian'
 # Use 2-letter ISO 639-1 if possible, 3-letter ISO code otherwise,
 # or use another catalog as a last resort.
-code = 'es'
-# ASCII characters are also used in French.
-use_ascii = True
+code = 'hu'
+# Q, W, X, Y are only used for foreign words.
+use_ascii = False
 # The charsets we want to support and create data for.
-charsets = ['ISO-8859-15', 'ISO-8859-1', 'WINDOWS-1252']
+charsets = ['ISO-8859-2', 'WINDOWS-1250']
 
 ## Optional Properties ##
 
-# Alphabet characters.
-# If use_ascii=True, there is no need to add any ASCII characters.
-# If case_mapping=True, there is no need to add several cases of a same
-# character (provided Python algorithms know the right cases).
-alphabet = 'ñáéíóúü'
+# Alphabet characters: I separate to make missing letters fully visible.
+alphabet = 'abcdefghijklmnop' + 'rstuv' + 'z' + 'áéíóöőúüű'
 # The start page. Though optional, it is advised to choose one yourself.
-start_pages = ['Wikipedia:Portada']
+start_pages = ['Kezdőlap']
 # give possibility to select another code for the Wikipedia URL.
 wikipedia_code = code
 # 'a' and 'A' will be considered the same character, and so on.
