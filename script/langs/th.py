@@ -33,4 +33,23 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipient may use your v
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+import re
+
+## Mandatory Properties ##
+
+name = 'Thai'
+code = 'th'
+use_ascii = False
+charsets = ['ISO-8859-11', 'TIS-620']
+
+## Optional Properties ##
+
+# The start page. Though optional, it is advised to choose one yourself.
+start_pages = ['หน้าหลัก']
+wikipedia_code = code
+case_mapping = False
