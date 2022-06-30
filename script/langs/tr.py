@@ -57,4 +57,11 @@ charsets = ['ISO-8859-3', 'ISO-8859-9']
 
 # Alphabet characters.
 alphabet = 'abcçdefgğhıijklmnoöprsştuüvyzâîû'
-# The start page. Though optional, it is adv
+# The start page. Though optional, it is advised to choose one yourself.
+start_pages = ['Ana_Sayfa']
+# give possibility to select another code for the Wikipedia URL.
+wikipedia_code = code
+# Python algorithm will lower 'I' in 'i' and 'İ' into a decomposed 'ı' + dot.
+# This is wrong when it comes to Turkish.
+custom_case_mapping = { 'İ': 'i', 'I': 'ı' }
+case_mapping = True
