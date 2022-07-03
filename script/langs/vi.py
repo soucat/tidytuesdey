@@ -49,4 +49,15 @@ use_ascii = False
 # From Wikipedia:
 # For systems that lack support for Unicode, dozens of 8-bit Vietnamese code
 # pages are available.[1] The most common are VISCII (TCVN 5712:1993), VPS, and
-# Windows-1258.[3] Whe
+# Windows-1258.[3] Where ASCII is required, such as when ensuring readability in
+# plain text e-mail, Vietnamese letters are often encoded according to Vietnamese
+# Quoted-Readable (VIQR) or VSCII Mnemonic (VSCII-MNEM),[4] though usage of either
+# variable-width scheme has declined dramatically following the adoption of
+# Unicode on the World Wide Web.
+charsets = ['WINDOWS-1258', 'VISCII']
+
+## Optional Properties ##
+
+alphabet = 'aăâbcdđeêghiklmnoôơpqrstuưvxy'
+start_pages = ['Chữ_Quốc_ngữ']
+w
