@@ -33,4 +33,20 @@
 # use your version of this file under the terms of the MPL, indicate your
 # decision by deleting the provisions above and replace them with the notice
 # and other provisions required by the GPL or the LGPL. If you do not delete
-# the provisions above, a recipi
+# the provisions above, a recipient may use your version of this file under
+# the terms of any one of the MPL, the GPL or the LGPL.
+#
+# ##### END LICENSE BLOCK #####
+
+import re
+
+## Mandatory Properties ##
+
+name = 'Vietnamese'
+code = 'vi'
+# It actually uses ASCII, but not all of it.
+use_ascii = False
+# From Wikipedia:
+# For systems that lack support for Unicode, dozens of 8-bit Vietnamese code
+# pages are available.[1] The most common are VISCII (TCVN 5712:1993), VPS, and
+# Windows-1258.[3] Whe
