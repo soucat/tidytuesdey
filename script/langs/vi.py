@@ -60,4 +60,5 @@ charsets = ['WINDOWS-1258', 'VISCII']
 
 alphabet = 'aăâbcdđeêghiklmnoôơpqrstuưvxy'
 start_pages = ['Chữ_Quốc_ngữ']
-w
+wikipedia_code = code
+case_mapping = True
