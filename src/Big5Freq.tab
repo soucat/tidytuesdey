@@ -37,4 +37,17 @@
 
 // Big5 frequency table
 // by Taiwan's Mandarin Promotion Council 
-/
+// <http://www.edu.tw:81/mandr/>
+
+/******************************************************************************
+ * 128  --> 0.42261
+ * 256  --> 0.57851
+ * 512  --> 0.74851
+ * 1024 --> 0.89384
+ * 2048 --> 0.97583
+ *
+ * Idea Distribution Ratio = 0.74851/(1-0.74851) =2.98
+ * Random Distribution Ration = 512/(5401-512)=0.105
+ * 
+ * Typical Distribution Ratio about 25% of Ideal one, still much higher than RDR
+ **********************************************************************
