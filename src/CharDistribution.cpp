@@ -37,4 +37,19 @@
 
 #include "CharDistribution.h"
 
-#include "JIS
+#include "JISFreq.tab"
+#include "Big5Freq.tab"
+#include "EUCKRFreq.tab"
+#include "EUCTWFreq.tab"
+#include "GB2312Freq.tab"
+
+#define SURE_YES 0.99f
+#define SURE_NO  0.01f
+
+//return confidence base on received data
+float CharDistributionAnalysis::GetConfidence(void)
+{ 
+  //if we didn't receive any character in our consideration range, or the
+  // number of frequent characters is below the minimum threshold, return
+  // negative answer
+  if (mTotalChars <= 0 || mFreqCh
