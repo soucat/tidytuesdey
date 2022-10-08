@@ -52,4 +52,21 @@ float CharDistributionAnalysis::GetConfidence(void)
   //if we didn't receive any character in our consideration range, or the
   // number of frequent characters is below the minimum threshold, return
   // negative answer
-  if (mTotalChars <= 0 || mFreqCh
+  if (mTotalChars <= 0 || mFreqChars <= mDataThreshold)
+    return SURE_NO;
+
+  if (mTotalChars != mFreqChars) {
+    float r = mFreqChars / ((mTotalChars - mFreqChars) * mTypicalDistributionRatio);
+
+    if (r < SURE_YES)
+      return r;
+  }
+  //normalize confidence, (we don't want to be 100% sure)
+  return SURE_YES;
+}
+
+EUCTWDistributionAnalysis::EUCTWDistributionAnalysis()
+{
+  mCharToFreqOrder = EUCTWCharToFreqOrder;
+  mTableSize = EUCTW_TABLE_SIZE;
+  mTypicalDistributionRatio = EUCTW_TYPICAL_DI
