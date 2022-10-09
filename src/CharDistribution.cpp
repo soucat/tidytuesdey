@@ -88,4 +88,19 @@ GB2312DistributionAnalysis::GB2312DistributionAnalysis()
 
 Big5DistributionAnalysis::Big5DistributionAnalysis()
 {
-  
+  mCharToFreqOrder = Big5CharToFreqOrder;
+  mTableSize = BIG5_TABLE_SIZE;
+  mTypicalDistributionRatio = BIG5_TYPICAL_DISTRIBUTION_RATIO;
+}
+
+SJISDistributionAnalysis::SJISDistributionAnalysis()
+{
+  mCharToFreqOrder = JISCharToFreqOrder;
+  mTableSize = JIS_TABLE_SIZE;
+  mTypicalDistributionRatio = JIS_TYPICAL_DISTRIBUTION_RATIO;
+}
+
+EUCJPDistributionAnalysis::EUCJPDistributionAnalysis()
+{
+  mCharToFreqOrder = JISCharToFreqOrder;
+  mTableSize = JIS_TABLE_SI
