@@ -103,4 +103,7 @@ SJISDistributionAnalysis::SJISDistributionAnalysis()
 EUCJPDistributionAnalysis::EUCJPDistributionAnalysis()
 {
   mCharToFreqOrder = JISCharToFreqOrder;
-  mTableSize = JIS_TABLE_SI
+  mTableSize = JIS_TABLE_SIZE;
+  mTypicalDistributionRatio = JIS_TYPICAL_DISTRIBUTION_RATIO;
+}
+
