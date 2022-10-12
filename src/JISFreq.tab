@@ -33,4 +33,19 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLO
+ * ***** END LICENSE BLOCK ***** */
+
+//Sampling from about 20M text materials include literature and computer technology
+
+// Japanese frequency table, applied to both S-JIS and EUC-JP
+//They are sorted in order. 
+
+/******************************************************************************
+ * 128  --> 0.77094
+ * 256  --> 0.85710
+ * 512  --> 0.92635
+ * 1024 --> 0.97130
+ * 2048 --> 0.99431
+ *
+ * Idea Distribution Ratio = 0.92635 / (1-0.92635) = 12.58
+ * Random Distribution Ration = 5
