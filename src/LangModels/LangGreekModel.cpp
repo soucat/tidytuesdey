@@ -76,4 +76,13 @@ static const unsigned char Windows_1253_CharToOrderMap[] =
   SYM,SYM, 17,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM,SYM,SYM,SYM,SYM, /* AX */
   SYM,SYM,SYM,SYM,SYM, 62,SYM,SYM, 19, 22, 15,SYM, 16,SYM, 24, 28, /* BX */
    55,  0, 25, 18, 20,  5, 29, 10, 26,  3,  8, 14, 13,  4, 31,  1, /* CX */
-   11,  6,ILL
+   11,  6,ILL,  7,  2, 12, 27, 23, 45, 21, 51, 60, 17, 19, 22, 15, /* DX */
+   61,  0, 25, 18, 20,  5, 29, 10, 26,  3,  8, 14, 13,  4, 31,  1, /* EX */
+   11,  6,  9,  7,  2, 12, 27, 23, 45, 21, 51, 60, 16, 24, 28,ILL, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+static const unsigned char Iso_8859_7_CharToOrderMap[] =
+{
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CT
