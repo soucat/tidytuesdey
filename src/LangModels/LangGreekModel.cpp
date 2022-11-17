@@ -85,4 +85,10 @@ static const unsigned char Windows_1253_CharToOrderMap[] =
 static const unsigned char Iso_8859_7_CharToOrderMap[] =
 {
   CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
-  CTR,CTR,CTR,CTR,CTR,CTR,CT
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 1X */
+  SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* 2X */
+  NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, /* 3X */
+  SYM, 32, 46, 41, 40, 30, 52, 48, 42, 33, 56, 49, 39, 44, 36, 34, /* 4X */
+   47, 59, 35, 38, 37, 43, 54, 50, 58, 53, 57,SYM,SYM,SYM,SYM,SYM, /* 5X */
+  SYM, 32, 46, 41, 40, 30, 52, 48, 42, 33, 56, 49, 39, 44, 36, 34, /* 6X */
+   47, 59, 35, 38, 37, 43, 54, 50,
