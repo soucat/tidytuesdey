@@ -204,4 +204,26 @@ static const PRUint8 GreekLangModel[] =
   1,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,
    0,0,0,0,0,0,0,3,0,2,2,2,1,1,1,2,2,1,1,1,2,2,0,
   2,2,0,2,0,3,0,0,0,0,3,0,2,0,0,2,1,1,0,1,0,1,2,
-   0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+   0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+};
+
+
+const SequenceModel Windows_1253GreekModel =
+{
+  Windows_1253_CharToOrderMap,
+  GreekLangModel,
+  46,
+  (float)0.958419074626211,
+  PR_FALSE,
+  "WINDOWS-1253"
+};
+
+const SequenceModel Iso_8859_7GreekModel =
+{
+  Iso_8859_7_CharToOrderMap,
+  GreekLangModel,
+  46,
+  (float)0.958419074626211,
+  PR_FALSE,
+  "ISO-8859-7"
+};
