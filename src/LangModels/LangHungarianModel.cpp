@@ -59,4 +59,13 @@
  * order X in CHARSET2 for the same language.
  * As such, it is possible to get missing order. For instance the
  * ligature of 'o' and 'e' exists in ISO-8859-15 but not in ISO-8859-1
- * even though they are both used for French. Same for the euro 
+ * even though they are both used for French. Same for the euro sign.
+ */
+static const unsigned char Iso_8859_2_CharToOrderMap[] =
+{
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 1X */
+  SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* 2X */
+  NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, /* 3X */
+  SYM,  1, 15, 23, 16,  0, 24, 13, 20,  7, 22,  9,  4, 12,  6,  8, /* 4X */
+   21, 34,  5,  3,  2, 1
