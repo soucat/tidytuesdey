@@ -74,4 +74,12 @@ static const unsigned char Iso_8859_2_CharToOrderMap[] =
   CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 8X */
   CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 9X */
   SYM, 55,SYM, 42,SYM, 56, 46,SYM,SYM, 37, 52, 57, 58,SYM, 48, 59, /* AX */
-  SYM, 60,SYM, 42,SYM,
+  SYM, 60,SYM, 42,SYM, 61, 46,SYM,SYM, 37, 52, 62, 63,SYM, 48, 64, /* BX */
+   65, 11, 40, 36, 35, 66, 38, 39, 41, 14, 50, 67, 53, 28, 45, 68, /* CX */
+   49, 43, 54, 26, 69, 27, 25,SYM, 44, 70, 30, 31, 29, 47, 51, 71, /* DX */
+   72, 11, 40, 36, 35, 73, 38, 39, 41, 14, 50, 74, 53, 28, 45, 75, /* EX */
+   49, 43, 54, 26, 76, 27, 25,SYM, 44, 77, 30, 31, 29, 47, 51,SYM, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+static const unsigned char Windows_125
