@@ -68,4 +68,10 @@ static const unsigned char Iso_8859_2_CharToOrderMap[] =
   SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* 2X */
   NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, /* 3X */
   SYM,  1, 15, 23, 16,  0, 24, 13, 20,  7, 22,  9,  4, 12,  6,  8, /* 4X */
-   21, 34,  5,  3,  2, 1
+   21, 34,  5,  3,  2, 19, 17, 32, 33, 18, 10,SYM,SYM,SYM,SYM,SYM, /* 5X */
+  SYM,  1, 15, 23, 16,  0, 24, 13, 20,  7, 22,  9,  4, 12,  6,  8, /* 6X */
+   21, 34,  5,  3,  2, 19, 17, 32, 33, 18, 10,SYM,SYM,SYM,SYM,CTR, /* 7X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 8X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 9X */
+  SYM, 55,SYM, 42,SYM, 56, 46,SYM,SYM, 37, 52, 57, 58,SYM, 48, 59, /* AX */
+  SYM, 60,SYM, 42,SYM,
