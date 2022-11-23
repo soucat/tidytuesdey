@@ -90,4 +90,9 @@ static const unsigned char Windows_1250_CharToOrderMap[] =
   NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, /* 3X */
   SYM,  1, 15, 23, 16,  0, 24, 13, 20,  7, 22,  9,  4, 12,  6,  8, /* 4X */
    21, 34,  5,  3,  2, 19, 17, 32, 33, 18, 10,SYM,SYM,SYM,SYM,SYM, /* 5X */
-  SYM, 
+  SYM,  1, 15, 23, 16,  0, 24, 13, 20,  7, 22,  9,  4, 12,  6,  8, /* 6X */
+   21, 34,  5,  3,  2, 19, 17, 32, 33, 18, 10,SYM,SYM,SYM,SYM,CTR, /* 7X */
+  SYM,ILL,SYM,ILL,SYM,SYM,SYM,SYM,ILL,SYM, 37,SYM, 46, 78, 48, 79, /* 8X */
+  ILL,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,SYM, 37,SYM, 46, 80, 48, 81, /* 9X */
+  SYM,SYM,SYM, 42,SYM, 82,SYM,SYM,SYM,SYM, 52,SYM,SYM,SYM,SYM, 83, /* AX */
+  SYM,SYM,SYM, 42,SYM,SYM,SYM,SYM,SYM, 84, 52,SYM, 85,SYM, 86, 87,
