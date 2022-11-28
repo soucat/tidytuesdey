@@ -56,4 +56,12 @@
  *
  * Orders are generic to a language. So the codepoint with order X in
  * CHARSET1 maps to the same character as the codepoint with the same
- * order X in CHARSET2 for the
+ * order X in CHARSET2 for the same language.
+ * As such, it is possible to get missing order. For instance the
+ * ligature of 'o' and 'e' exists in ISO-8859-15 but not in ISO-8859-1
+ * even though they are both used for French. Same for the euro sign.
+ */
+static const unsigned char Tis_620_CharToOrderMap[] =
+{
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 1X *
