@@ -77,4 +77,13 @@ static const unsigned char Tis_620_CharToOrderMap[] =
    49, 91, 83, 34,  9, 17, 30, 12, 39,  1, 16, 19, 33, 62, 22, 47, /* BX */
    38,  7, 10,  2, 50, 11,107,  8, 28, 37, 13, 18, 98,  4, 53, 95, /* CX */
    14,SYM,  0, 29,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,ILL,ILL,ILL,SYM, /* DX */
-    6, 20, 27, 24, 25,108, 51,SYM,SY
+    6, 20, 27, 24, 25,108, 51,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,109, /* EX */
+  NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,110,111,ILL,ILL,ILL,ILL, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+static const unsigned char Iso_8859_11_CharToOrderMap[] =
+{
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 1X */
+  SYM,SYM,SYM,SYM,SYM,SYM,SYM,
