@@ -98,4 +98,19 @@ static const unsigned char Iso_8859_11_CharToOrderMap[] =
    49, 91, 83, 34,  9, 17, 30, 12, 39,  1, 16, 19, 33, 62, 22, 47, /* BX */
    38,  7, 10,  2, 50, 11,114,  8, 28, 37, 13, 18, 98,  4, 53, 95, /* CX */
    14,SYM,  0, 29,SYM,SYM,SYM,SYM,SYM,SYM,SYM,ILL,ILL,ILL,ILL,SYM, /* DX */
-    6, 20, 27, 24, 25,115,
+    6, 20, 27, 24, 25,115, 51,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,116, /* EX */
+  NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,117,118,ILL,ILL,ILL,ILL, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+
+/* Model Table:
+ * Total sequences: 2324
+ * First 512 sequences: 0.8815720594354438
+ * Next 512 sequences (512-1024): 0.0920860122682917
+ * Rest: 0.026341928296264486
+ * Negative sequences: TODO
+ */
+static const PRUint8 ThaiLangModel[] =
+{
+  0,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
