@@ -91,4 +91,11 @@ static const unsigned char Iso_8859_9_CharToOrderMap[] =
   SYM,  0, 15, 21,  7,  1, 26, 22, 19,  6, 28,  9,  5, 11,  3, 14, /* 4X */
    23, 34,  4, 10,  8, 12, 20, 29, 32, 13, 18,SYM,SYM,SYM,SYM,SYM, /* 5X */
   SYM,  0, 15, 21,  7,  1, 26, 22, 19,  2, 28,  9,  5, 11,  3, 14, /* 6X */
-   23, 34,  4, 10,  8, 12, 20, 29, 32, 13, 18,SYM,SYM,SYM,SYM,
+   23, 34,  4, 10,  8, 12, 20, 29, 32, 13, 18,SYM,SYM,SYM,SYM,CTR, /* 7X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 8X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 9X */
+  SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* AX */
+  SYM,SYM,SYM,SYM,SYM, 81,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* BX */
+   41, 36, 30, 44, 39, 82, 46, 24, 42, 33, 83, 45, 84, 37, 31, 85, /* CX */
+   25, 47, 86, 38, 87, 88, 27,SYM, 43, 89, 40, 35, 16,  2, 17, 90, /* DX */
+   41
