@@ -75,4 +75,14 @@ static const unsigned char Iso_8859_3_CharToOrderMap[] =
   CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 9X */
   SYM, 48,SYM,SYM,SYM,ILL, 49,SYM,SYM,  2, 17, 25, 50,SYM,ILL, 51, /* AX */
   SYM, 52,SYM,SYM,SYM,SYM, 53,SYM,SYM,  6, 17, 25, 54,SYM,ILL, 55, /* BX */
-   41, 36, 30,ILL, 39, 56, 57, 24, 42, 33, 58, 45, 59, 37, 31, 60, 
+   41, 36, 30,ILL, 39, 56, 57, 24, 42, 33, 58, 45, 59, 37, 31, 60, /* CX */
+  ILL, 47, 61, 38, 62, 63, 27,SYM, 64, 65, 40, 35, 16, 66, 67, 68, /* DX */
+   41, 36, 30,ILL, 39, 69, 70, 24, 42, 33, 71, 45, 72, 37, 31, 73, /* EX */
+  ILL, 47, 74, 38, 75, 76, 27,SYM, 77, 78, 40, 35, 16, 79, 80,SYM, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+static const unsigned char Iso_8859_9_CharToOrderMap[] =
+{
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CT
