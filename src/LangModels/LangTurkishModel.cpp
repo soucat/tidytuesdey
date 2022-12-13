@@ -85,4 +85,10 @@ static const unsigned char Iso_8859_3_CharToOrderMap[] =
 static const unsigned char Iso_8859_9_CharToOrderMap[] =
 {
   CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,RET,CTR,CTR,RET,CTR,CTR, /* 0X */
-  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CT
+  CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR,CTR, /* 1X */
+  SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* 2X */
+  NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,NUM,SYM,SYM,SYM,SYM,SYM,SYM, /* 3X */
+  SYM,  0, 15, 21,  7,  1, 26, 22, 19,  6, 28,  9,  5, 11,  3, 14, /* 4X */
+   23, 34,  4, 10,  8, 12, 20, 29, 32, 13, 18,SYM,SYM,SYM,SYM,SYM, /* 5X */
+  SYM,  0, 15, 21,  7,  1, 26, 22, 19,  2, 28,  9,  5, 11,  3, 14, /* 6X */
+   23, 34,  4, 10,  8, 12, 20, 29, 32, 13, 18,SYM,SYM,SYM,SYM,
