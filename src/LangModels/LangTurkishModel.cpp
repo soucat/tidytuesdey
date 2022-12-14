@@ -98,4 +98,19 @@ static const unsigned char Iso_8859_9_CharToOrderMap[] =
   SYM,SYM,SYM,SYM,SYM, 81,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM,SYM, /* BX */
    41, 36, 30, 44, 39, 82, 46, 24, 42, 33, 83, 45, 84, 37, 31, 85, /* CX */
    25, 47, 86, 38, 87, 88, 27,SYM, 43, 89, 40, 35, 16,  2, 17, 90, /* DX */
-   41
+   41, 36, 30, 44, 39, 91, 46, 24, 42, 33, 92, 45, 93, 37, 31, 94, /* EX */
+   25, 47, 95, 38, 96, 97, 27,SYM, 43, 98, 40, 35, 16,  6, 17, 99, /* FX */
+};
+/*X0  X1  X2  X3  X4  X5  X6  X7  X8  X9  XA  XB  XC  XD  XE  XF */
+
+
+/* Model Table:
+ * Total sequences: 935
+ * First 512 sequences: 0.991865243864388
+ * Next 512 sequences (512-1024): 0.008134756135611957
+ * Rest: 2.949029909160572e-17
+ * Negative sequences: TODO
+ */
+static const PRUint8 TurkishLangModel[] =
+{
+  3,2,3,3
