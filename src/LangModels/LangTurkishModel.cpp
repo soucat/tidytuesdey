@@ -157,4 +157,17 @@ const SequenceModel Iso_8859_3TurkishModel =
   Iso_8859_3_CharToOrderMap,
   TurkishLangModel,
   36,
-  (float)0.99186
+  (float)0.991865243864388,
+  PR_FALSE,
+  "ISO-8859-3"
+};
+
+const SequenceModel Iso_8859_9TurkishModel =
+{
+  Iso_8859_9_CharToOrderMap,
+  TurkishLangModel,
+  36,
+  (float)0.991865243864388,
+  PR_FALSE,
+  "ISO-8859-9"
+};
