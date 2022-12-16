@@ -63,4 +63,22 @@ nsProbingState nsBig5Prober::HandleData(const char* aBuf, PRUint32 aLen)
       if (i == 0)
       {
         mLastChar[1] = aBuf[0];
-    
+        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
+      }
+      else
+        mDistributionAnalyser.HandleOneChar(aBuf+i-1, charLen);
+    }
+  }
+
+  mLastChar[0] = aBuf[aLen-1];
+
+  if (mState == eDetecting)
+    if (mDistributionAnalyser.GotEnoughData() && GetConfidence() > SHORTCUT_THRESHOLD)
+      mState = eFoundIt;
+
+  return mState;
+}
+
+float nsBig5Prober::GetConfidence(void)
+{
+  float distribCf = mDistributionAnalyser.GetConfidenc
