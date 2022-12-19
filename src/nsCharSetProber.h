@@ -44,4 +44,18 @@
 
 typedef enum {
   eDetecting = 0,   //We are still detecting, no sure answer yet, but caller can ask for confidence.
-  eFound
+  eFoundIt = 1,     //That's a positive answer
+  eNotMe = 2        //Negative answer
+} nsProbingState;
+
+#define SHORTCUT_THRESHOLD      (float)0.95
+
+class nsCharSetProber {
+public:
+  virtual ~nsCharSetProber() {}
+  virtual const char* GetCharSetName() = 0;
+  virtual nsProbingState HandleData(const char* aBuf, PRUint32 aLen) = 0;
+  virtual nsProbingState GetState(void) = 0;
+  virtual void      Reset(void)  = 0;
+  virtual float     GetConfidence(void) = 0;
+  virtual voi
