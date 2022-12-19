@@ -58,4 +58,15 @@ public:
   virtual nsProbingState GetState(void) = 0;
   virtual void      Reset(void)  = 0;
   virtual float     GetConfidence(void) = 0;
-  virtual voi
+  virtual void      SetOpion() = 0;
+
+#ifdef DEBUG_chardet
+  virtual void  DumpStatus() {};
+#endif
+
+  // Helper functions used in the Latin1 and Group probers.
+  // both functions Allocate a new buffer for newBuf. This buffer should be 
+  // freed by the caller using PR_FREEIF.
+  // Both functions return PR_FALSE in case of memory allocation failure.
+  static PRBool FilterWithoutEnglishLetters(const char* aBuf, PRUint32 aLen, char** newBuf, PRUint32& newLen);
+  
