@@ -30,4 +30,18 @@
  * under the terms of either the GPL or the LGPL, and not to allow others to
  * use your version of this file under the terms of the MPL, indicate your
  * decision by deleting the provisions above and replace them with the notice
- * and other provisions r
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+#ifndef nsCharSetProber_h__
+#define nsCharSetProber_h__
+
+#include "nscore.h"
+
+//#define DEBUG_chardet // Uncomment this for debug dump.
+
+typedef enum {
+  eDetecting = 0,   //We are still detecting, no sure answer yet, but caller can ask for confidence.
+  eFound
