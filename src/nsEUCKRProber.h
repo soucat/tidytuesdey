@@ -71,4 +71,5 @@ protected:
 };
 
 
-#endif /* nsEUCKRProber_h__ *
+#endif /* nsEUCKRProber_h__ */
+
