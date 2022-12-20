@@ -39,4 +39,16 @@
 #define nsEUCKRProber_h__
 
 #include "nsCharSetProber.h"
-#inclu
+#include "nsCodingStateMachine.h"
+#include "CharDistribution.h"
+
+class nsEUCKRProber: public nsCharSetProber {
+public:
+  nsEUCKRProber(PRBool aIsPreferredLanguage)
+    :mIsPreferredLanguage(aIsPreferredLanguage)
+  {mCodingSM = new nsCodingStateMachine(&EUCKRSMModel);
+    Reset();
+  }
+  virtual ~nsEUCKRProber(void){delete mCodingSM;}
+  nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
+  const char* GetCharSetName() {return "
