@@ -51,4 +51,24 @@ public:
   }
   virtual ~nsEUCKRProber(void){delete mCodingSM;}
   nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
-  const char* GetCharSetName() {return "
+  const char* GetCharSetName() {return "EUC-KR";}
+  nsProbingState GetState(void) {return mState;}
+  void      Reset(void);
+  float     GetConfidence(void);
+  void      SetOpion() {}
+
+protected:
+  void      GetDistribution(PRUint32 aCharLen, const char* aStr);
+  
+  nsCodingStateMachine* mCodingSM;
+  nsProbingState mState;
+
+  //EUCKRContextAnalysis mContextAnalyser;
+  EUCKRDistributionAnalysis mDistributionAnalyser;
+  char mLastChar[2];
+  PRBool mIsPreferredLanguage;
+
+};
+
+
+#endif /* nsEUCKRProber_h__ *
