@@ -1,3 +1,4 @@
+
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -35,57 +36,39 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-#include "nsEUCTWProber.h"
+#ifndef nsEUCTWProber_h__
+#define nsEUCTWProber_h__
 
-void  nsEUCTWProber::Reset(void)
-{
-  mCodingSM->Reset(); 
-  mState = eDetecting;
-  mDistributionAnalyser.Reset(mIsPreferredLanguage);
-  //mContextAnalyser.Reset();
-}
+#include "nsCharSetProber.h"
+#include "nsCodingStateMachine.h"
+#include "CharDistribution.h"
 
-nsProbingState nsEUCTWProber::HandleData(const char* aBuf, PRUint32 aLen)
-{
-  nsSMState codingState;
+class nsEUCTWProber: public nsCharSetProber {
+public:
+  nsEUCTWProber(PRBool aIsPreferredLanguage)
+    :mIsPreferredLanguage(aIsPreferredLanguage)
+  {mCodingSM = new nsCodingStateMachine(&EUCTWSMModel);
+    Reset();}
+  virtual ~nsEUCTWProber(void){delete mCodingSM;}
+  nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
+  const char* GetCharSetName() {return "EUC-TW";}
+  nsProbingState GetState(void) {return mState;}
+  void      Reset(void);
+  float     GetConfidence(void);
+  void      SetOpion() {}
 
-  for (PRUint32 i = 0; i < aLen; i++)
-  {
-    codingState = mCodingSM->NextState(aBuf[i]);
-    if (codingState == eItsMe)
-    {
-      mState = eFoundIt;
-      break;
-    }
-    if (codingState == eStart)
-    {
-      PRUint32 charLen = mCodingSM->GetCurrentCharLen();
+protected:
+  void      GetDistribution(PRUint32 aCharLen, const char* aStr);
+  
+  nsCodingStateMachine* mCodingSM;
+  nsProbingState mState;
 
-      if (i == 0)
-      {
-        mLastChar[1] = aBuf[0];
-        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
-      }
-      else
-        mDistributionAnalyser.HandleOneChar(aBuf+i-1, charLen);
-    }
-  }
+  //EUCTWContextAnalysis mContextAnalyser;
+  EUCTWDistributionAnalysis mDistributionAnalyser;
+  char mLastChar[2];
+  PRBool mIsPreferredLanguage;
 
-  mLastChar[0] = aBuf[aLen-1];
+};
 
-  if (mState == eDetecting)
-    if (mDistributionAnalyser.GotEnoughData() && GetConfidence() > SHORTCUT_THRESHOLD)
-      mState = eFoundIt;
-//    else
-//      mDistributionAnalyser.HandleData(aBuf, aLen);
 
-  return mState;
-}
-
-float nsEUCTWProber::GetConfidence(void)
-{
-  float distribCf = mDistributionAnalyser.GetConfidence();
-
-  return (float)distribCf;
-}
-
+#endif /* nsEUCTWProber_h__ */

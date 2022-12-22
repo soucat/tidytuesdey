@@ -1,3 +1,4 @@
+
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -35,57 +36,66 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-#include "nsEUCTWProber.h"
 
-void  nsEUCTWProber::Reset(void)
+#include "nsEscCharsetProber.h"
+#include "nsUniversalDetector.h"
+
+nsEscCharSetProber::nsEscCharSetProber(PRUint32 aLanguageFilter)
 {
-  mCodingSM->Reset(); 
+  for (PRUint32 i = 0; i < NUM_OF_ESC_CHARSETS; i++)
+    mCodingSM[i] = nsnull;
+  if (aLanguageFilter & NS_FILTER_CHINESE_SIMPLIFIED) 
+  {
+    mCodingSM[0] = new nsCodingStateMachine(&HZSMModel);
+    mCodingSM[1] = new nsCodingStateMachine(&ISO2022CNSMModel);
+  }
+  if (aLanguageFilter & NS_FILTER_JAPANESE)
+    mCodingSM[2] = new nsCodingStateMachine(&ISO2022JPSMModel);
+  if (aLanguageFilter & NS_FILTER_KOREAN)
+    mCodingSM[3] = new nsCodingStateMachine(&ISO2022KRSMModel);
+  mActiveSM = NUM_OF_ESC_CHARSETS;
   mState = eDetecting;
-  mDistributionAnalyser.Reset(mIsPreferredLanguage);
-  //mContextAnalyser.Reset();
+  mDetectedCharset = nsnull;
 }
 
-nsProbingState nsEUCTWProber::HandleData(const char* aBuf, PRUint32 aLen)
+nsEscCharSetProber::~nsEscCharSetProber(void)
+{
+  for (PRUint32 i = 0; i < NUM_OF_ESC_CHARSETS; i++)
+    delete mCodingSM[i];
+}
+
+void nsEscCharSetProber::Reset(void)
+{
+  mState = eDetecting;
+  for (PRUint32 i = 0; i < NUM_OF_ESC_CHARSETS; i++)
+    if (mCodingSM[i])
+      mCodingSM[i]->Reset();
+  mActiveSM = NUM_OF_ESC_CHARSETS;
+  mDetectedCharset = nsnull;
+}
+
+nsProbingState nsEscCharSetProber::HandleData(const char* aBuf, PRUint32 aLen)
 {
   nsSMState codingState;
+  PRInt32 j;
+  PRUint32 i;
 
-  for (PRUint32 i = 0; i < aLen; i++)
+  for ( i = 0; i < aLen && mState == eDetecting; i++)
   {
-    codingState = mCodingSM->NextState(aBuf[i]);
-    if (codingState == eItsMe)
+    for (j = mActiveSM-1; j>= 0; j--)
     {
-      mState = eFoundIt;
-      break;
-    }
-    if (codingState == eStart)
-    {
-      PRUint32 charLen = mCodingSM->GetCurrentCharLen();
-
-      if (i == 0)
+      if (mCodingSM[j])
       {
-        mLastChar[1] = aBuf[0];
-        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
+        codingState = mCodingSM[j]->NextState(aBuf[i]);
+        if (codingState == eItsMe)
+        {
+          mState = eFoundIt;
+          mDetectedCharset = mCodingSM[j]->GetCodingStateMachine();
+          return mState;
+        }
       }
-      else
-        mDistributionAnalyser.HandleOneChar(aBuf+i-1, charLen);
     }
   }
 
-  mLastChar[0] = aBuf[aLen-1];
-
-  if (mState == eDetecting)
-    if (mDistributionAnalyser.GotEnoughData() && GetConfidence() > SHORTCUT_THRESHOLD)
-      mState = eFoundIt;
-//    else
-//      mDistributionAnalyser.HandleData(aBuf, aLen);
-
   return mState;
 }
-
-float nsEUCTWProber::GetConfidence(void)
-{
-  float distribCf = mDistributionAnalyser.GetConfidence();
-
-  return (float)distribCf;
-}
-
