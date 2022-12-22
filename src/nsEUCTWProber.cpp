@@ -59,4 +59,24 @@ nsProbingState nsEUCTWProber::HandleData(const char* aBuf, PRUint32 aLen)
     }
     if (codingState == eStart)
     {
-      PRUint32 charLen = mCodingSM->GetCurrentC
+      PRUint32 charLen = mCodingSM->GetCurrentCharLen();
+
+      if (i == 0)
+      {
+        mLastChar[1] = aBuf[0];
+        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
+      }
+      else
+        mDistributionAnalyser.HandleOneChar(aBuf+i-1, charLen);
+    }
+  }
+
+  mLastChar[0] = aBuf[aLen-1];
+
+  if (mState == eDetecting)
+    if (mDistributionAnalyser.GotEnoughData() && GetConfidence() > SHORTCUT_THRESHOLD)
+      mState = eFoundIt;
+//    else
+//      mDistributionAnalyser.HandleData(aBuf, aLen);
+
+  r
