@@ -40,4 +40,23 @@
 void  nsEUCTWProber::Reset(void)
 {
   mCodingSM->Reset(); 
-  mState = eDetecti
+  mState = eDetecting;
+  mDistributionAnalyser.Reset(mIsPreferredLanguage);
+  //mContextAnalyser.Reset();
+}
+
+nsProbingState nsEUCTWProber::HandleData(const char* aBuf, PRUint32 aLen)
+{
+  nsSMState codingState;
+
+  for (PRUint32 i = 0; i < aLen; i++)
+  {
+    codingState = mCodingSM->NextState(aBuf[i]);
+    if (codingState == eItsMe)
+    {
+      mState = eFoundIt;
+      break;
+    }
+    if (codingState == eStart)
+    {
+      PRUint32 charLen = mCodingSM->GetCurrentC
