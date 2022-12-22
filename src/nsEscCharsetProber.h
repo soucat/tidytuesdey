@@ -29,4 +29,21 @@
  * under the terms of either the GPL or the LGPL, and not to allow others to
  * use your version of this file under the terms of the MPL, indicate your
  * decision by deleting the provisions above and replace them with the notice
- * and other provisions required by the GP
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+#ifndef nsEscCharSetProber_h__
+#define nsEscCharSetProber_h__
+
+#include "nsCharSetProber.h"
+#include "nsCodingStateMachine.h"
+
+#define NUM_OF_ESC_CHARSETS   4
+
+class nsEscCharSetProber: public nsCharSetProber {
+public:
+  nsEscCharSetProber(PRUint32 aLanguageFilter);
+  vir
