@@ -1,3 +1,4 @@
+
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
@@ -35,33 +36,61 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-#ifndef nsEscCharSetProber_h__
-#define nsEscCharSetProber_h__
+// for S-JIS encoding, obeserve characteristic:
+// 1, kana character (or hankaku?) often have hight frequency of appereance
+// 2, kana character often exist in group
+// 3, certain combination of kana is never used in japanese language
 
-#include "nsCharSetProber.h"
-#include "nsCodingStateMachine.h"
+#include "nsGB2312Prober.h"
 
-#define NUM_OF_ESC_CHARSETS   4
+void  nsGB18030Prober::Reset(void)
+{
+  mCodingSM->Reset(); 
+  mState = eDetecting;
+  mDistributionAnalyser.Reset(mIsPreferredLanguage);
+  //mContextAnalyser.Reset();
+}
 
-class nsEscCharSetProber: public nsCharSetProber {
-public:
-  nsEscCharSetProber(PRUint32 aLanguageFilter);
-  virtual ~nsEscCharSetProber(void);
-  nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
-  const char* GetCharSetName() {return mDetectedCharset;}
-  nsProbingState GetState(void) {return mState;}
-  void      Reset(void);
-  float     GetConfidence(void){return (float)0.99;}
-  void      SetOpion() {}
+nsProbingState nsGB18030Prober::HandleData(const char* aBuf, PRUint32 aLen)
+{
+  nsSMState codingState;
 
-protected:
-  void      GetDistribution(PRUint32 aCharLen, const char* aStr);
-  
-  nsCodingStateMachine* mCodingSM[NUM_OF_ESC_CHARSETS] ;
-  PRUint32    mActiveSM;
-  nsProbingState mState;
-  const char *  mDetectedCharset;
-};
+  for (PRUint32 i = 0; i < aLen; i++)
+  {
+    codingState = mCodingSM->NextState(aBuf[i]);
+    if (codingState == eItsMe)
+    {
+      mState = eFoundIt;
+      break;
+    }
+    if (codingState == eStart)
+    {
+      PRUint32 charLen = mCodingSM->GetCurrentCharLen();
 
-#endif /* nsEscCharSetProber_h__ */
+      if (i == 0)
+      {
+        mLastChar[1] = aBuf[0];
+        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
+      }
+      else
+        mDistributionAnalyser.HandleOneChar(aBuf+i-1, charLen);
+    }
+  }
 
+  mLastChar[0] = aBuf[aLen-1];
+
+  if (mState == eDetecting)
+    if (mDistributionAnalyser.GotEnoughData() && GetConfidence() > SHORTCUT_THRESHOLD)
+      mState = eFoundIt;
+//    else
+//      mDistributionAnalyser.HandleData(aBuf, aLen);
+
+  return mState;
+}
+
+float nsGB18030Prober::GetConfidence(void)
+{
+  float distribCf = mDistributionAnalyser.GetConfidence();
+
+  return (float)distribCf;
+}
