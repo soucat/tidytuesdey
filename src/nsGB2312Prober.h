@@ -42,3 +42,15 @@
 #include "nsCodingStateMachine.h"
 #include "CharDistribution.h"
 
+// We use GB18030 to replace GB2312, because 18030 is a superset.
+
+class nsGB18030Prober: public nsCharSetProber {
+public:
+  nsGB18030Prober(PRBool aIsPreferredLanguage)
+    :mIsPreferredLanguage(aIsPreferredLanguage)
+  {mCodingSM = new nsCodingStateMachine(&GB18030SMModel);
+    Reset();}
+  virtual ~nsGB18030Prober(void){delete mCodingSM;}
+  nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
+  const char* GetCharSetName() {return "GB18030";}
+  nsProbingState GetState(void) {retu
