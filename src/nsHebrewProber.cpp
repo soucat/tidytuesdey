@@ -74,4 +74,15 @@ PRBool nsHebrewProber::isNonFinal(char c)
   // apostrophe is converted to a space in FilterWithoutEnglishLetters causing 
   // the Non-Final tsadi to appear at an end of a word even though this is not 
   // the case in the original text.
-  // The letters Pe and Kaf rarely display a related beha
+  // The letters Pe and Kaf rarely display a related behavior of not being a 
+  // good Non-Final letter. Words like 'Pop', 'Winamp' and 'Mubarak' for 
+  // example legally end with a Non-Final Pe or Kaf. However, the benefit of 
+  // these letters as Non-Final letters outweighs the damage since these words 
+  // are quite rare.
+}
+
+/** HandleData
+ * Final letter analysis for logical-visual decision.
+ * Look for evidence that the received buffer is either logical Hebrew or 
+ * visual Hebrew.
+ * The following cases are checked
