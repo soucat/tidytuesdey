@@ -92,4 +92,11 @@ PRBool nsHebrewProber::isNonFinal(char c)
  * 2) A word longer than 1 letter, ending with a Non-Final letter. In normal
  *    Hebrew, words ending with Kaf, Mem, Nun, Pe or Tsadi, should not end with
  *    the Non-Final form of that letter. Exceptions to this rule are mentioned
- *    above in isNonFinal(). This is an in
+ *    above in isNonFinal(). This is an indication that the text is laid out
+ *    backwards. +1 for visual score
+ * 3) A word longer than 1 letter, starting with a final letter. Final letters 
+ *    should not appear at the beginning of a word. This is an indication that 
+ *    the text is laid out backwards. +1 for visual score.
+ *
+ * The visual score and logical score are accumulated throughout the text and 
+ * are finally checked against each other in GetCharSetName(
