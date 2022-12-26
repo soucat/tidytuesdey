@@ -85,4 +85,11 @@ PRBool nsHebrewProber::isNonFinal(char c)
  * Final letter analysis for logical-visual decision.
  * Look for evidence that the received buffer is either logical Hebrew or 
  * visual Hebrew.
- * The following cases are checked
+ * The following cases are checked:
+ * 1) A word longer than 1 letter, ending with a final letter. This is an 
+ *    indication that the text is laid out "naturally" since the final letter 
+ *    really appears at the end. +1 for logical score.
+ * 2) A word longer than 1 letter, ending with a Non-Final letter. In normal
+ *    Hebrew, words ending with Kaf, Mem, Nun, Pe or Tsadi, should not end with
+ *    the Non-Final form of that letter. Exceptions to this rule are mentioned
+ *    above in isNonFinal(). This is an in
