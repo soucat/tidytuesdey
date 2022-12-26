@@ -68,4 +68,10 @@ PRBool nsHebrewProber::isFinal(char c)
 
 PRBool nsHebrewProber::isNonFinal(char c)
 {
-  return ((c == NORMAL_
+  return ((c == NORMAL_KAF) || (c == NORMAL_MEM) || (c == NORMAL_NUN) || (c == NORMAL_PE));
+  // The normal Tsadi is not a good Non-Final letter due to words like 
+  // 'lechotet' (to chat) containing an apostrophe after the tsadi. This 
+  // apostrophe is converted to a space in FilterWithoutEnglishLetters causing 
+  // the Non-Final tsadi to appear at an end of a word even though this is not 
+  // the case in the original text.
+  // The letters Pe and Kaf rarely display a related beha
