@@ -54,4 +54,18 @@
 // If the difference is below this, don't rely solely on the final letter score distance.
 #define MIN_FINAL_CHAR_DISTANCE (5)
 
-// Minimum Vi
+// Minimum Visual vs Logical model score difference.
+// If the difference is below this, don't rely at all on the model score distance.
+#define MIN_MODEL_DISTANCE (0.01)
+
+#define VISUAL_HEBREW_NAME ("ISO-8859-8")
+#define LOGICAL_HEBREW_NAME ("WINDOWS-1255")
+
+PRBool nsHebrewProber::isFinal(char c)
+{
+  return ((c == FINAL_KAF) || (c == FINAL_MEM) || (c == FINAL_NUN) || (c == FINAL_PE) || (c == FINAL_TSADI));
+}
+
+PRBool nsHebrewProber::isNonFinal(char c)
+{
+  return ((c == NORMAL_
