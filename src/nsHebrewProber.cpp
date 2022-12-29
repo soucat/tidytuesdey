@@ -99,4 +99,17 @@ PRBool nsHebrewProber::isNonFinal(char c)
  *    the text is laid out backwards. +1 for visual score.
  *
  * The visual score and logical score are accumulated throughout the text and 
- * are finally checked against each other in GetCharSetName(
+ * are finally checked against each other in GetCharSetName().
+ * No checking for final letters in the middle of words is done since that case
+ * is not an indication for either Logical or Visual text.
+ *
+ * The input buffer should not contain any white spaces that are not (' ')
+ * or any low-ascii punctuation marks. 
+ */
+nsProbingState nsHebrewProber::HandleData(const char* aBuf, PRUint32 aLen)
+{
+  // Both model probers say it's not them. No reason to continue.
+  if (GetState() == eNotMe)
+    return eNotMe;
+
+  const cha
