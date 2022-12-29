@@ -151,4 +151,16 @@ const char* nsHebrewProber::GetCharSetName()
   if (finalsub <= -(MIN_FINAL_CHAR_DISTANCE))
     return VISUAL_HEBREW_NAME;
 
-  // It's not dominant enough, try to rely o
+  // It's not dominant enough, try to rely on the model scores instead.
+  float modelsub = mLogicalProb->GetConfidence() - mVisualProb->GetConfidence();
+  if (modelsub > MIN_MODEL_DISTANCE)
+    return LOGICAL_HEBREW_NAME;
+  if (modelsub < -(MIN_MODEL_DISTANCE))
+    return VISUAL_HEBREW_NAME;
+
+  // Still no good, back to final letter distance, maybe it'll save the day.
+  if (finalsub < 0) 
+    return VISUAL_HEBREW_NAME;
+
+  // (finalsub > 0 - Logical) or (don't know what to do) default to Logical.
+  re
