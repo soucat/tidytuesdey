@@ -112,4 +112,16 @@ nsProbingState nsHebrewProber::HandleData(const char* aBuf, PRUint32 aLen)
   if (GetState() == eNotMe)
     return eNotMe;
 
-  const cha
+  const char *curPtr, *endPtr = aBuf+aLen;
+  char cur;
+
+  for (curPtr = (char*)aBuf; curPtr < endPtr; ++curPtr)
+  {
+    cur = *curPtr;
+    if (cur == ' ') // We stand on a space - a word just ended
+    {
+      if (mBeforePrev != ' ') // *(curPtr-2) was not a space so prev is not a 1 letter word
+      {
+        if (isFinal(mPrev)) // case (1) [-2:not space][-1:final letter][cur:space]
+          ++mFinalCharLogicalScore;
+        else if (isNonFinal(mPrev)) // case (2) [-2:not spac
