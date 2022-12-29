@@ -124,4 +124,18 @@ nsProbingState nsHebrewProber::HandleData(const char* aBuf, PRUint32 aLen)
       {
         if (isFinal(mPrev)) // case (1) [-2:not space][-1:final letter][cur:space]
           ++mFinalCharLogicalScore;
-        else if (isNonFinal(mPrev)) // case (2) [-2:not spac
+        else if (isNonFinal(mPrev)) // case (2) [-2:not space][-1:Non-Final letter][cur:space]
+          ++mFinalCharVisualScore;
+      }
+    }
+    else  // Not standing on a space
+    {
+      if ((mBeforePrev == ' ') && (isFinal(mPrev)) && (cur != ' ')) // case (3) [-2:space][-1:final letter][cur:not space]
+        ++mFinalCharVisualScore;
+    }
+    mBeforePrev = mPrev;
+    mPrev = cur;
+  }
+
+  // Forever detecting, till the end or until both model probers return eNotMe (handled above).
+  return eDetecti
