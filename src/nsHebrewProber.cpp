@@ -138,4 +138,17 @@ nsProbingState nsHebrewProber::HandleData(const char* aBuf, PRUint32 aLen)
   }
 
   // Forever detecting, till the end or until both model probers return eNotMe (handled above).
-  return eDetecti
+  return eDetecting;
+}
+
+// Make the decision: is it Logical or Visual?
+const char* nsHebrewProber::GetCharSetName()
+{
+  // If the final letter score distance is dominant enough, rely on it.
+  PRInt32 finalsub = mFinalCharLogicalScore - mFinalCharVisualScore;
+  if (finalsub >= MIN_FINAL_CHAR_DISTANCE) 
+    return LOGICAL_HEBREW_NAME;
+  if (finalsub <= -(MIN_FINAL_CHAR_DISTANCE))
+    return VISUAL_HEBREW_NAME;
+
+  // It's not dominant enough, try to rely o
