@@ -57,4 +57,15 @@ const char *ProberName[] =
 
 nsMBCSGroupProber::nsMBCSGroupProber(PRUint32 aLanguageFilter)
 {
-  for
+  for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
+    mProbers[i] = nsnull;
+
+  mProbers[0] = new nsUTF8Prober();
+  if (aLanguageFilter & NS_FILTER_JAPANESE) 
+  {
+    mProbers[1] = new nsSJISProber(aLanguageFilter == NS_FILTER_JAPANESE);
+    mProbers[2] = new nsEUCJPProber(aLanguageFilter == NS_FILTER_JAPANESE);
+  }
+  if (aLanguageFilter & NS_FILTER_CHINESE_SIMPLIFIED)
+    mProbers[3] = new nsGB18030Prober(aLanguageFilter == NS_FILTER_CHINESE_SIMPLIFIED);
+  if (aLanguageFilter & NS_FILTE
