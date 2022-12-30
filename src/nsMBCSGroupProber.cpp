@@ -68,4 +68,22 @@ nsMBCSGroupProber::nsMBCSGroupProber(PRUint32 aLanguageFilter)
   }
   if (aLanguageFilter & NS_FILTER_CHINESE_SIMPLIFIED)
     mProbers[3] = new nsGB18030Prober(aLanguageFilter == NS_FILTER_CHINESE_SIMPLIFIED);
-  if (aLanguageFilter & NS_FILTE
+  if (aLanguageFilter & NS_FILTER_KOREAN)
+    mProbers[4] = new nsEUCKRProber(aLanguageFilter == NS_FILTER_KOREAN);
+  if (aLanguageFilter & NS_FILTER_CHINESE_TRADITIONAL) 
+  {
+    mProbers[5] = new nsBig5Prober(aLanguageFilter == NS_FILTER_CHINESE_TRADITIONAL);
+    mProbers[6] = new nsEUCTWProber(aLanguageFilter == NS_FILTER_CHINESE_TRADITIONAL);
+  }
+  Reset();
+}
+
+nsMBCSGroupProber::~nsMBCSGroupProber()
+{
+  for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
+  {
+    delete mProbers[i];
+  }
+}
+
+const char* nsMB
