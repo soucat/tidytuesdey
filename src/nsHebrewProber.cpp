@@ -181,4 +181,14 @@ void nsHebrewProber::Reset(void)
 nsProbingState nsHebrewProber::GetState(void) 
 {
   // Remain active as long as any of the model probers are active.
-  if ((mLogicalProb->GetState() == eNotMe) && (mVisualProb->GetState() == 
+  if ((mLogicalProb->GetState() == eNotMe) && (mVisualProb->GetState() == eNotMe))
+    return eNotMe;
+  return eDetecting;
+}
+
+#ifdef DEBUG_chardet
+void  nsHebrewProber::DumpStatus()
+{
+  printf("  HEB: %d - %d [Logical-Visual score]\r\n", mFinalCharLogicalScore, mFinalCharVisualScore);
+}
+#endif
