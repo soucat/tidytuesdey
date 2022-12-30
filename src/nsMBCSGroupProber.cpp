@@ -32,4 +32,29 @@
  * use your version of this file under the terms of the MPL, indicate your
  * decision by deleting the provisions above and replace them with the notice
  * and other provisions required by the GPL or the LGPL. If you do not delete
- * the provisions ab
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+#include <stdio.h>
+
+#include "nsMBCSGroupProber.h"
+#include "nsUniversalDetector.h"
+
+#if defined(DEBUG_chardet) || defined(DEBUG_jgmyers)
+const char *ProberName[] = 
+{
+  "UTF-8",
+  "SJIS",
+  "EUC-JP",
+  "GB18030",
+  "EUC-KR",
+  "Big5",
+  "EUC-TW",
+};
+
+#endif
+
+nsMBCSGroupProber::nsMBCSGroupProber(PRUint32 aLanguageFilter)
+{
+  for
