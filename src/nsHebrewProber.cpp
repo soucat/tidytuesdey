@@ -163,4 +163,22 @@ const char* nsHebrewProber::GetCharSetName()
     return VISUAL_HEBREW_NAME;
 
   // (finalsub > 0 - Logical) or (don't know what to do) default to Logical.
-  re
+  return LOGICAL_HEBREW_NAME;
+}
+
+
+void nsHebrewProber::Reset(void)
+{
+  mFinalCharLogicalScore = 0;
+  mFinalCharVisualScore = 0;
+
+  // mPrev and mBeforePrev are initialized to space in order to simulate a word 
+  // delimiter at the beginning of the data
+  mPrev = ' ';
+  mBeforePrev = ' ';
+}
+
+nsProbingState nsHebrewProber::GetState(void) 
+{
+  // Remain active as long as any of the model probers are active.
+  if ((mLogicalProb->GetState() == eNotMe) && (mVisualProb->GetState() == 
