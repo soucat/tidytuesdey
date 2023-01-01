@@ -86,4 +86,27 @@ nsMBCSGroupProber::~nsMBCSGroupProber()
   }
 }
 
-const char* nsMB
+const char* nsMBCSGroupProber::GetCharSetName()
+{
+  if (mBestGuess == -1)
+  {
+    GetConfidence();
+    if (mBestGuess == -1)
+      mBestGuess = 0;
+  }
+  return mProbers[mBestGuess]->GetCharSetName();
+}
+
+void  nsMBCSGroupProber::Reset(void)
+{
+  mActiveNum = 0;
+  for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
+  {
+    if (mProbers[i])
+    {
+      mProbers[i]->Reset();
+      mIsActive[i] = PR_TRUE;
+      ++mActiveNum;
+    }
+    else
+ 
