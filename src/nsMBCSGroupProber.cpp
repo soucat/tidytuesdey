@@ -109,4 +109,27 @@ void  nsMBCSGroupProber::Reset(void)
       ++mActiveNum;
     }
     else
- 
+      mIsActive[i] = PR_FALSE;
+  }
+  mBestGuess = -1;
+  mState = eDetecting;
+  mKeepNext = 0;
+}
+
+nsProbingState nsMBCSGroupProber::HandleData(const char* aBuf, PRUint32 aLen)
+{
+  nsProbingState st;
+  PRUint32 start = 0;
+  PRUint32 keepNext = mKeepNext;
+
+  //do filtering to reduce load to probers
+  for (PRUint32 pos = 0; pos < aLen; ++pos)
+  {
+    if (aBuf[pos] & 0x80)
+    {
+      if (!keepNext)
+        start = pos;
+      keepNext = 2;
+    }
+    else if (keepNext)
+    
