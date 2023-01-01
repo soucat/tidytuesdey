@@ -132,4 +132,26 @@ nsProbingState nsMBCSGroupProber::HandleData(const char* aBuf, PRUint32 aLen)
       keepNext = 2;
     }
     else if (keepNext)
-    
+    {
+      if (--keepNext == 0)
+      {
+        for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
+        {
+          if (!mIsActive[i])
+            continue;
+          st = mProbers[i]->HandleData(aBuf + start, pos + 1 - start);
+          if (st == eFoundIt)
+          {
+            mBestGuess = i;
+            mState = eFoundIt;
+            return mState;
+          }
+        }
+      }
+    }
+  }
+
+  if (keepNext) {
+    for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
+    {
+      if (!mIs
