@@ -206,4 +206,19 @@ void nsMBCSGroupProber::DumpStatus()
   GetConfidence();
   for (i = 0; i < NUM_OF_PROBERS; i++)
   {
-    if (!mIsActive[i]
+    if (!mIsActive[i])
+      printf("  MBCS inactive: [%s] (confidence is too low).\r\n", ProberName[i]);
+    else
+    {
+      cf = mProbers[i]->GetConfidence();
+      printf("  MBCS %1.3f: [%s]\r\n", cf, ProberName[i]);
+    }
+  }
+}
+#endif
+
+#ifdef DEBUG_jgmyers
+void nsMBCSGroupProber::GetDetectorState(nsUniversalDetector::DetectorState (&states)[nsUniversalDetector::NumDetectors], PRUint32 &offset)
+{
+  for (PRUint32 i = 0; i < NUM_OF_PROBERS; ++i) {
+    states[offset].name 
