@@ -180,4 +180,30 @@ float nsMBCSGroupProber::GetConfidence(void)
   case eFoundIt:
     return (float)0.99;
   case eNotMe:
-    retur
+    return (float)0.01;
+  default:
+    for (i = 0; i < NUM_OF_PROBERS; i++)
+    {
+      if (!mIsActive[i])
+        continue;
+      cf = mProbers[i]->GetConfidence();
+      if (bestConf < cf)
+      {
+        bestConf = cf;
+        mBestGuess = i;
+      }
+    }
+  }
+  return bestConf;
+}
+
+#ifdef DEBUG_chardet
+void nsMBCSGroupProber::DumpStatus()
+{
+  PRUint32 i;
+  float cf;
+  
+  GetConfidence();
+  for (i = 0; i < NUM_OF_PROBERS; i++)
+  {
+    if (!mIsActive[i]
