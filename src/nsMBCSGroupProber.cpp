@@ -221,4 +221,10 @@ void nsMBCSGroupProber::DumpStatus()
 void nsMBCSGroupProber::GetDetectorState(nsUniversalDetector::DetectorState (&states)[nsUniversalDetector::NumDetectors], PRUint32 &offset)
 {
   for (PRUint32 i = 0; i < NUM_OF_PROBERS; ++i) {
-    states[offset].name 
+    states[offset].name = ProberName[i];
+    states[offset].isActive = mIsActive[i];
+    states[offset].confidence = mIsActive[i] ? mProbers[i]->GetConfidence() : 0.0;
+    ++offset;
+  }
+}
+#endif /* DEBUG_jgmyers */
