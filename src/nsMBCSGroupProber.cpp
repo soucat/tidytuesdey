@@ -154,4 +154,30 @@ nsProbingState nsMBCSGroupProber::HandleData(const char* aBuf, PRUint32 aLen)
   if (keepNext) {
     for (PRUint32 i = 0; i < NUM_OF_PROBERS; i++)
     {
-      if (!mIs
+      if (!mIsActive[i])
+        continue;
+      st = mProbers[i]->HandleData(aBuf + start, aLen - start);
+      if (st == eFoundIt)
+      {
+        mBestGuess = i;
+        mState = eFoundIt;
+        return mState;
+      }
+    }
+  }
+  mKeepNext = keepNext;
+
+  return mState;
+}
+
+float nsMBCSGroupProber::GetConfidence(void)
+{
+  PRUint32 i;
+  float bestConf = 0.0, cf;
+
+  switch (mState)
+  {
+  case eFoundIt:
+    return (float)0.99;
+  case eNotMe:
+    retur
