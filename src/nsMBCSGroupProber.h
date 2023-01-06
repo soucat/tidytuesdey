@@ -64,4 +64,17 @@ public:
   void  DumpStatus();
 #endif
 #ifdef DEBUG_jgmyers
-  void GetDetectorState(nsUniversalDetector::DetectorState (&states)[n
+  void GetDetectorState(nsUniversalDetector::DetectorState (&states)[nsUniversalDetector::NumDetectors], PRUint32 &offset);
+#endif
+
+protected:
+  nsProbingState mState;
+  nsCharSetProber* mProbers[NUM_OF_PROBERS];
+  PRBool          mIsActive[NUM_OF_PROBERS];
+  PRInt32 mBestGuess;
+  PRUint32 mActiveNum;
+  PRUint32 mKeepNext;
+};
+
+#endif /* nsMBCSGroupProber_h__ */
+
