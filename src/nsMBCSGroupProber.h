@@ -49,4 +49,19 @@
 
 #define NUM_OF_PROBERS    7
 
-class nsMBCSGroupProber: public
+class nsMBCSGroupProber: public nsCharSetProber {
+public:
+  nsMBCSGroupProber(PRUint32 aLanguageFilter);
+  virtual ~nsMBCSGroupProber();
+  nsProbingState HandleData(const char* aBuf, PRUint32 aLen);
+  const char* GetCharSetName();
+  nsProbingState GetState(void) {return mState;}
+  void      Reset(void);
+  float     GetConfidence(void);
+  void      SetOpion() {}
+
+#ifdef DEBUG_chardet
+  void  DumpStatus();
+#endif
+#ifdef DEBUG_jgmyers
+  void GetDetectorState(nsUniversalDetector::DetectorState (&states)[n
