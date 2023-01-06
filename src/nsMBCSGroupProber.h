@@ -31,4 +31,22 @@
  * use your version of this file under the terms of the MPL, indicate your
  * decision by deleting the provisions above and replace them with the notice
  * and other provisions required by the GPL or the LGPL. If you do not delete
- * the provision
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+#ifndef nsMBCSGroupProber_h__
+#define nsMBCSGroupProber_h__
+
+#include "nsSJISProber.h"
+#include "nsUTF8Prober.h"
+#include "nsEUCJPProber.h"
+#include "nsGB2312Prober.h"
+#include "nsEUCKRProber.h"
+#include "nsBig5Prober.h"
+#include "nsEUCTWProber.h"
+
+#define NUM_OF_PROBERS    7
+
+class nsMBCSGroupProber: public
