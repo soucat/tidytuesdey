@@ -200,3 +200,54 @@ nsProbingState nsSBCSGroupProber::HandleData(const char* aBuf, PRUint32 aLen)
   }
 
 done:
+  PR_FREEIF(newBuf1);
+
+  return mState;
+}
+
+float nsSBCSGroupProber::GetConfidence(void)
+{
+  PRUint32 i;
+  float bestConf = 0.0, cf;
+
+  switch (mState)
+  {
+  case eFoundIt:
+    return (float)0.99; //sure yes
+  case eNotMe:
+    return (float)0.01;  //sure no
+  default:
+    for (i = 0; i < NUM_OF_SBCS_PROBERS; i++)
+    {
+      if (!mIsActive[i])
+        continue;
+      cf = mProbers[i]->GetConfidence();
+      if (bestConf < cf)
+      {
+        bestConf = cf;
+        mBestGuess = i;
+      }
+    }
+  }
+  return bestConf;
+}
+
+#ifdef DEBUG_chardet
+void nsSBCSGroupProber::DumpStatus()
+{
+  PRUint32 i;
+  float cf;
+  
+  cf = GetConfidence();
+  printf(" SBCS Group Prober --------begin status \r\n");
+  for (i = 0; i < NUM_OF_SBCS_PROBERS; i++)
+  {
+    if (!mIsActive[i])
+      printf("  inactive: [%s] (i.e. confidence is too low).\r\n", mProbers[i]->GetCharSetName());
+    else
+      mProbers[i]->DumpStatus();
+  }
+  printf(" SBCS Group found best match [%s] confidence %f.\r\n",  
+         mProbers[mBestGuess]->GetCharSetName(), cf);
+}
+#endif
