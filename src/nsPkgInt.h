@@ -79,4 +79,11 @@ typedef struct nsPkgInt {
 
 #define PCK4BITS(a,b,c,d,e,f,g,h) PCK8BITS(  ((PRUint32)(((b) << 4) | (a))), \
                                              ((PRUint32)(((d) << 4) | (c))), \
-                              
+                                             ((PRUint32)(((f) << 4) | (e))), \
+                                             ((PRUint32)(((h) << 4) | (g))) )
+
+#define GETFROMPCK(i, c) \
+ (((((c).data)[(i)>>(c).idxsft])>>(((i)&(c).sftmsk)<<(c).bitsft))&(c).unitmsk)
+
+#endif /* nsPkgInt_h__ */
+
