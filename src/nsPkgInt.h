@@ -68,4 +68,15 @@ typedef struct nsPkgInt {
   nsSftMsk  sftmsk;
   nsBitSft  bitsft;
   nsUnitMsk unitmsk;
-  const PRUint32* co
+  const PRUint32* const data;
+} nsPkgInt;
+
+
+#define PCK16BITS(a,b)            ((PRUint32)(((b) << 16) | (a)))
+
+#define PCK8BITS(a,b,c,d)         PCK16BITS( ((PRUint32)(((b) << 8) | (a))),  \
+                                             ((PRUint32)(((d) << 8) | (c))))
+
+#define PCK4BITS(a,b,c,d,e,f,g,h) PCK8BITS(  ((PRUint32)(((b) << 4) | (a))), \
+                                             ((PRUint32)(((d) << 4) | (c))), \
+                              
