@@ -55,4 +55,16 @@ public:
   void      SetOpion() {}
 
 #ifdef DEBUG_chardet
-  v
+  void  DumpStatus();
+#endif
+
+protected:
+  nsProbingState mState;
+  nsCharSetProber* mProbers[NUM_OF_SBCS_PROBERS];
+  PRBool          mIsActive[NUM_OF_SBCS_PROBERS];
+  PRInt32 mBestGuess;
+  PRUint32 mActiveNum;
+};
+
+#endif /* nsSBCSGroupProber_h__ */
+
