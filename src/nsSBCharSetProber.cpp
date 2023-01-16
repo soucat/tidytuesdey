@@ -45,3 +45,28 @@ nsProbingState nsSingleByteCharSetProber::HandleData(const char* aBuf, PRUint32 
   for (PRUint32 i = 0; i < aLen; i++)
   {
     order = mModel->charToOrderMap[(unsigned char)aBuf[i]];
+
+    if (order < SYMBOL_CAT_ORDER)
+    {
+      mTotalChar++;
+    }
+    else if (order == ILL)
+    {
+      /* When encountering an illegal codepoint, no need
+       * to continue analyzing data. */
+      mState = eNotMe;
+      break;
+    }
+    else if (order == CTR)
+    {
+      mCtrlChar++;
+    }
+    if (order < mModel->freqCharCount)
+    {
+        mFreqChar++;
+
+      if (mLastOrder < mModel->freqCharCount)
+      {
+        mTotalSeqs++;
+        if (!mReversed)
+          ++(mSeq
