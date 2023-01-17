@@ -142,4 +142,12 @@ const char* nsSingleByteCharSetProber::GetCharSetName()
 {
   if (!mNameProber)
     return mModel->charsetName;
-  return mNameProber->GetCharSe
+  return mNameProber->GetCharSetName();
+}
+
+#ifdef DEBUG_chardet
+void nsSingleByteCharSetProber::DumpStatus()
+{
+  printf("  SBCS: %1.3f [%s]\r\n", GetConfidence(), GetCharSetName());
+}
+#endif
