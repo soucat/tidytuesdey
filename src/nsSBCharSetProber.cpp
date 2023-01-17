@@ -124,4 +124,22 @@ float nsSingleByteCharSetProber::GetConfidence(void)
      * character). This could make the difference between very closely related
      * charsets used for the same language.
      */
-    r = r * (mSeqCounters[POSITIVE_CAT] + (float) mSeqCounters[PROBA
+    r = r * (mSeqCounters[POSITIVE_CAT] + (float) mSeqCounters[PROBABLE_CAT] / 4) / mTotalChar;
+    /* The more control characters (proportionnaly to the size of the text), the
+     * less confident we become in the current charset.
+     */
+    r = r * (mTotalChar - mCtrlChar) / mTotalChar;
+    r = r*mFreqChar/mTotalChar;
+    if (r >= (float)1.00)
+      r = (float)0.99;
+    return r;
+  }
+  return (float)0.01;
+#endif
+}
+
+const char* nsSingleByteCharSetProber::GetCharSetName()
+{
+  if (!mNameProber)
+    return mModel->charsetName;
+  return mNameProber->GetCharSe
