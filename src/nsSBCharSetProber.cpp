@@ -82,4 +82,29 @@ nsProbingState nsSingleByteCharSetProber::HandleData(const char* aBuf, PRUint32 
     {
       float cf = GetConfidence();
       if (cf > POSITIVE_SHORTCUT_THRESHOLD)
-        mState = e
+        mState = eFoundIt;
+      else if (cf < NEGATIVE_SHORTCUT_THRESHOLD)
+        mState = eNotMe;
+    }
+
+  return mState;
+}
+
+void  nsSingleByteCharSetProber::Reset(void)
+{
+  mState = eDetecting;
+  mLastOrder = 255;
+  for (PRUint32 i = 0; i < NUMBER_OF_SEQ_CAT; i++)
+    mSeqCounters[i] = 0;
+  mTotalSeqs = 0;
+  mTotalChar = 0;
+  mCtrlChar  = 0;
+  mFreqChar = 0;
+}
+
+//#define NEGATIVE_APPROACH 1
+
+float nsSingleByteCharSetProber::GetConfidence(void)
+{
+#ifdef NEGATIVE_APPROACH
+  i
