@@ -107,4 +107,14 @@ void  nsSingleByteCharSetProber::Reset(void)
 float nsSingleByteCharSetProber::GetConfidence(void)
 {
 #ifdef NEGATIVE_APPROACH
-  i
+  if (mTotalSeqs > 0)
+    if (mTotalSeqs > mSeqCounters[NEGATIVE_CAT]*10 )
+      return ((float)(mTotalSeqs - mSeqCounters[NEGATIVE_CAT]*10))/mTotalSeqs * mFreqChar / mTotalChar;
+  return (float)0.01;
+#else  //POSITIVE_APPROACH
+  float r;
+
+  if (mTotalSeqs > 0) {
+    r = ((float)1.0) * mSeqCounters[POSITIVE_CAT] / mTotalSeqs / mModel->mTypicalPositiveRatio;
+    /* Multiply by a ratio of positive sequences per characters.
+     * This would help in particular to d
