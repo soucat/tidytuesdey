@@ -59,4 +59,19 @@ nsProbingState nsSJISProber::HandleData(const char* aBuf, PRUint32 aLen)
     codingState = mCodingSM->NextState(aBuf[i]);
     if (codingState == eItsMe)
     {
-      mState = e
+      mState = eFoundIt;
+      break;
+    }
+    if (codingState == eStart)
+    {
+      PRUint32 charLen = mCodingSM->GetCurrentCharLen();
+      if (i == 0)
+      {
+        mLastChar[1] = aBuf[0];
+        mContextAnalyser.HandleOneChar(mLastChar+2-charLen, charLen);
+        mDistributionAnalyser.HandleOneChar(mLastChar, charLen);
+      }
+      else
+      {
+        mContextAnalyser.HandleOneChar(aBuf+i+1-charLen, charLen);
+        mDistributionAnalyser.HandleOneCha
