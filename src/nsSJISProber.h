@@ -38,4 +38,22 @@
 // for S-JIS encoding, obeserve characteristic:
 // 1, kana character (or hankaku?) often have hight frequency of appereance
 // 2, kana character often exist in group
-// 3, certain combination of kana is never used in j
+// 3, certain combination of kana is never used in japanese language
+
+#ifndef nsSJISProber_h__
+#define nsSJISProber_h__
+
+#include "nsCharSetProber.h"
+#include "nsCodingStateMachine.h"
+#include "JpCntx.h"
+#include "CharDistribution.h"
+
+
+class nsSJISProber: public nsCharSetProber {
+public:
+  nsSJISProber(PRBool aIsPreferredLanguage)
+    :mIsPreferredLanguage(aIsPreferredLanguage)
+  {mCodingSM = new nsCodingStateMachine(&SJISSMModel);
+    Reset();}
+  virtual ~nsSJISProber(void){delete mCodingSM;}
+  nsProbingState 
