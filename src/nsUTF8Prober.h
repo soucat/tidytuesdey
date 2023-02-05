@@ -51,4 +51,14 @@ public:
   const char* GetCharSetName() {return "UTF-8";}
   nsProbingState GetState(void) {return mState;}
   void      Reset(void);
-  float     GetConfiden
+  float     GetConfidence(void);
+  void      SetOpion() {}
+
+protected:
+  nsCodingStateMachine* mCodingSM;
+  nsProbingState mState;
+  PRUint32 mNumOfMBChar;
+};
+
+#endif /* nsUTF8Prober_h__ */
+
