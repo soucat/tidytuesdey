@@ -295,3 +295,43 @@ void nsUniversalDetector::DataEnd()
     // caller program sometimes call DataEnd before anything has been sent to detector
     return;
   }
+
+  if (mDetectedCharset)
+  {
+    mDone = PR_TRUE;
+    Report(mDetectedCharset);
+    return;
+  }
+
+  switch (mInputState)
+  {
+  case eHighbyte:
+    {
+      float proberConfidence;
+      float maxProberConfidence = (float)0.0;
+      PRInt32 maxProber = 0;
+
+      for (PRInt32 i = 0; i < NUM_OF_CHARSET_PROBERS; i++)
+      {
+        if (mCharSetProbers[i])
+        {
+          proberConfidence = mCharSetProbers[i]->GetConfidence();
+          if (proberConfidence > maxProberConfidence)
+          {
+            maxProberConfidence = proberConfidence;
+            maxProber = i;
+          }
+        }
+      }
+      //do not report anything because we are not confident of it, that's in fact a negative answer
+      if (maxProberConfidence > MINIMUM_THRESHOLD)
+        Report(mCharSetProbers[maxProber]->GetCharSetName());
+    }
+    break;
+  case eEscAscii:
+    break;
+  default:
+    ;
+  }
+  return;
+}
