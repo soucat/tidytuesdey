@@ -69,4 +69,21 @@ public:
    virtual void DataEnd(void);
 
 protected:
-   virtual void 
+   virtual void Report(const char* aCharset) = 0;
+   virtual void Reset();
+   nsInputState  mInputState;
+   PRBool  mNbspFound;
+   PRBool  mDone;
+   PRBool  mInTag;
+   PRBool  mStart;
+   PRBool  mGotData;
+   char    mLastChar;
+   const char *  mDetectedCharset;
+   PRInt32 mBestGuess;
+   PRUint32 mLanguageFilter;
+
+   nsCharSetProber  *mCharSetProbers[NUM_OF_CHARSET_PROBERS];
+   nsCharSetProber  *mEscCharSetProber;
+};
+
+#endif
