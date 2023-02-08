@@ -36,4 +36,23 @@
  * ***** END LICENSE BLOCK ***** */
 
 #ifndef nsUniversalDetector_h__
-#define nsUniversalDetector_h_
+#define nsUniversalDetector_h__
+
+class nsCharSetProber;
+
+#define NUM_OF_CHARSET_PROBERS  3
+
+typedef enum {
+  ePureAscii = 0,
+  eEscAscii  = 1,
+  eHighbyte  = 2
+} nsInputState;
+
+#define NS_FILTER_CHINESE_SIMPLIFIED  0x01
+#define NS_FILTER_CHINESE_TRADITIONAL 0x02
+#define NS_FILTER_JAPANESE            0x04
+#define NS_FILTER_KOREAN              0x08
+#define NS_FILTER_NON_CJK             0x10
+#define NS_FILTER_ALL                 0x1F
+#define NS_FILTER_CHINESE (NS_FILTER_CHINESE_SIMPLIFIED | \
+       
