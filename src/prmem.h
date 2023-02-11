@@ -1,3 +1,4 @@
+
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
@@ -34,26 +35,16 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
-#ifndef nsDummyCore_h__
-#define nsDummyCore_h__
+#ifndef nsDummyPrmem_h__
+#define nsDummyPrmem_h__
 
-typedef bool PRBool;
-typedef int PRInt32;
-typedef unsigned int PRUint32;
-typedef short PRInt16;
-typedef unsigned short PRUint16;
-typedef signed char PRInt8;
-typedef unsigned char PRUint8;
+#include <stdlib.h>
 
-#define PR_FALSE false
-#define PR_TRUE true
-#define nsnull 0
-
-
-enum nsresult
+inline void* PR_Malloc(size_t len)
 {
-    NS_OK,
-    NS_ERROR_OUT_OF_MEMORY
-};
+    return malloc(len);
+}
+
+#define PR_FREEIF(p) if (p) free(p)
 
 #endif
