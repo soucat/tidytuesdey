@@ -93,3 +93,23 @@ void show_usage()
     printf("\n");
     printf("Options:\n");
     printf(" -v, --version         Print version and build information.\n");
+    printf(" -h, --help            Print this help.\n");
+    printf("\n");
+}
+
+int main(int argc, char ** argv)
+{
+    static struct option longopts[] =
+    {
+        { "version", no_argument, NULL, 'v' },
+        { "help", no_argument, NULL, 'h' },
+        { 0, 0, 0, 0 },
+    };
+
+    static int oc;
+    while((oc = getopt_long(argc, argv, "vh", longopts, NULL)) != -1)
+    {
+        switch (oc)
+        {
+        case 'v':
+   
