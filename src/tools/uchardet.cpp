@@ -56,4 +56,25 @@ void detect(FILE * fp)
     while (!feof(fp))
     {
         size_t len = fread(buffer, 1, BUFFER_SIZE, fp);
-      
+        int retval = uchardet_handle_data(handle, buffer, len);
+        if (retval != 0)
+        {
+            fprintf(stderr, "Handle data error.\n");
+            exit(1);
+        }
+    }
+    uchardet_data_end(handle);
+
+    const char * charset = uchardet_get_charset(handle);
+    if (*charset)
+    	printf("%s\n", charset);
+	else
+		printf("unknown\n");
+	
+    uchardet_delete(handle);
+}
+
+void show_version()
+{
+    printf("\n");
+    printf("uchardet Command Line To
