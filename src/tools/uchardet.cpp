@@ -112,4 +112,24 @@ int main(int argc, char ** argv)
         switch (oc)
         {
         case 'v':
-   
+            show_version();
+            return 0;
+        case 'h':
+            show_usage();
+            return 0;
+        case '?':
+            printf("Please use %s --help.\n", argv[0]);
+            return 1;
+        }
+    }
+
+    FILE * f = stdin;
+    int error_seen = 0;
+    if (argc < 2)
+    {
+        // No file arg, use stdin by default
+        detect(f);
+    }
+    for (int i = 1; i < argc; i++)
+    {
+        const char *filename = argv[i
