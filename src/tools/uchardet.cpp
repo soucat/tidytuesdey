@@ -77,4 +77,19 @@ void detect(FILE * fp)
 void show_version()
 {
     printf("\n");
-    printf("uchardet Command Line To
+    printf("uchardet Command Line Tool\n");
+    printf("Version %s\n", VERSION);
+    printf("\n");
+    printf("Authors: %s\n", "BYVoid, Jehan");
+    printf("Bug Report: %s\n", "https://bugs.freedesktop.org/enter_bug.cgi?product=uchardet");
+    printf("\n");
+}
+
+void show_usage()
+{
+    show_version();
+    printf("Usage:\n");
+    printf(" uchardet [Options] [File]...\n");
+    printf("\n");
+    printf("Options:\n");
+    printf(" -v, --version         Print version and build information.\n");
