@@ -33,3 +33,27 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
+ * ***** END LICENSE BLOCK ***** */
+#include "../uchardet.h"
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <getopt.h>
+#include <iostream>
+#include <stdio.h>
+
+#ifndef VERSION
+#define VERSION "Unknown"
+#endif
+#define BUFFER_SIZE 65536
+
+char buffer[BUFFER_SIZE];
+
+void detect(FILE * fp)
+{
+    uchardet_t handle = uchardet_new();
+
+    while (!feof(fp))
+    {
+        size_t len = fread(buffer, 1, BUFFER_SIZE, fp);
+      
