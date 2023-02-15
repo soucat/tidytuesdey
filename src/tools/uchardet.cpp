@@ -132,4 +132,20 @@ int main(int argc, char ** argv)
     }
     for (int i = 1; i < argc; i++)
     {
-        const char *filename = argv[i
+        const char *filename = argv[i];
+        f = fopen(filename, "r");
+        if (f == NULL)
+        {
+            perror(filename);
+            error_seen = 1;
+            continue;
+        }
+        if (argc > 2)
+        {
+            printf("%s: ", filename);
+        }
+        detect(f);
+    }
+
+    return error_seen;
+}
