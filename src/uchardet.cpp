@@ -42,3 +42,31 @@
 
 class HandleUniversalDetector : public nsUniversalDetector
 {
+protected:
+    char *m_charset;
+
+public:
+    HandleUniversalDetector()
+    : nsUniversalDetector(NS_FILTER_ALL)
+    , m_charset(0)
+    {
+    }
+
+    virtual ~HandleUniversalDetector()
+    {
+        if (m_charset)
+            free(m_charset);
+    }
+
+    virtual void Report(const char* charset)
+    {
+        if (m_charset)
+            free(m_charset);
+        m_charset = strdup(charset);
+    }
+
+    virtual void Reset()
+    {
+        nsUniversalDetector::Reset();
+        if (m_charset)
+            
