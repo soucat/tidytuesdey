@@ -69,4 +69,26 @@ public:
     {
         nsUniversalDetector::Reset();
         if (m_charset)
-            
+            free(m_charset);
+        m_charset = strdup("");
+    }
+
+    const char* GetCharset() const
+    {
+        return m_charset? m_charset : "";
+    }
+};
+
+uchardet_t uchardet_new(void)
+{
+    return reinterpret_cast<uchardet_t> (new HandleUniversalDetector());
+}
+
+void uchardet_delete(uchardet_t ud)
+{
+    delete reinterpret_cast<HandleUniversalDetector*>(ud);
+}
+
+int uchardet_handle_data(uchardet_t ud, const char * data, size_t len)
+{
+    nsresult ret = reinterpret_cast<HandleUniversalDetector*>(u
