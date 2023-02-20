@@ -1,0 +1,6 @@
+UTF-8 (abréviation de l’anglais Universal Character Set Transformation Format -
+8 bits) est un codage de caractères informatiques conçu pour coder l’ensemble
+des caractères du « répertoire universel de caractères codés », initialement
+développé par l’ISO dans la norme internationale ISO/CEI 10646, aujourd’hui
+totalement compatible avec le standard Unicode, en restant compatible avec la
+norme ASCII limit
