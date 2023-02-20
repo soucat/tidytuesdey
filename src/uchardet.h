@@ -83,4 +83,10 @@ void uchardet_reset(uchardet_t ud);
  * @param ud [in] handle of a instance of uchardet
  * @return name of charset on success and "" on failure.
  */
-const char * ucharde
+const char * uchardet_get_charset(uchardet_t ud);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif
