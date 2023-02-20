@@ -49,4 +49,22 @@ typedef struct uchardet * uchardet_t;
  * Create an encoding detector.
  * @return a handle of a instance of uchardet
  */
-u
+uchardet_t uchardet_new(void);
+
+/**
+ * Delete an encoding detector.
+ * @param ud [in] handle of a instance of uchardet
+ */
+void uchardet_delete(uchardet_t ud);
+
+/**
+ * Feed data to an encoding detector.
+ * @param ud [in] handle of a instance of uchardet
+ * @param data [in] data
+ * @param len [in] number of byte of data
+ * @return non-zero number on failure.
+ */
+int uchardet_handle_data(uchardet_t ud, const char * data, size_t len);
+
+/**
+ 
