@@ -67,4 +67,20 @@ void uchardet_delete(uchardet_t ud);
 int uchardet_handle_data(uchardet_t ud, const char * data, size_t len);
 
 /**
- 
+ * Notify an end of data to an encoding detctor.
+ * @param ud [in] handle of a instance of uchardet
+ */
+void uchardet_data_end(uchardet_t ud);
+
+/**
+ * Reset an encoding detector.
+ * @param ud [in] handle of a instance of uchardet
+ */
+void uchardet_reset(uchardet_t ud);
+
+/**
+ * Get an iconv-compatible name of the encoding that was detected.
+ * @param ud [in] handle of a instance of uchardet
+ * @return name of charset on success and "" on failure.
+ */
+const char * ucharde
