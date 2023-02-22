@@ -54,4 +54,19 @@ detect(FILE *fp)
 
     while (!feof(fp))
     {
-        size_t l
+        size_t len = fread(buffer, 1, BUFFER_SIZE, fp);
+        int retval = uchardet_handle_data(handle, buffer, len);
+        if (retval != 0)
+        {
+            fprintf(stderr,
+                    "uchardet-tests: handle data error.\n");
+            exit(1);
+        }
+    }
+    uchardet_data_end(handle);
+
+    charset = strdup(uchardet_get_charset(handle));
+    for (i = 0; charset[i]; i++)
+    {
+        /* Our test files are lowercase. */
+        charset[i] = tolowe
