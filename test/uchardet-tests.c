@@ -30,4 +30,28 @@
  * use your version of this file under the terms of the MPL, indicate your
  * decision by deleting the provisions above and replace them with the notice
  * and other provisions required by the GPL or the LGPL. If you do not delete
- * the provisions above, a
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "../src/uchardet.h"
+
+#define BUFFER_SIZE 65536
+
+char *
+detect(FILE *fp)
+{
+    uchardet_t  handle = uchardet_new();
+    char       *charset;
+    char        buffer[BUFFER_SIZE];
+    int         i;
+
+    while (!feof(fp))
+    {
+        size_t l
