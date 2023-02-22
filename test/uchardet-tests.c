@@ -69,4 +69,29 @@ detect(FILE *fp)
     for (i = 0; charset[i]; i++)
     {
         /* Our test files are lowercase. */
-        charset[i] = tolowe
+        charset[i] = tolower(charset[i]);
+    }
+
+    uchardet_delete(handle);
+
+    return charset;
+}
+
+int
+main(int argc, char ** argv)
+{
+    FILE *f;
+    char *filename;
+    char *expected_charset;
+    char *charset;
+    int   success;
+
+    if (argc != 2)
+    {
+        /* The test program expects exactly 1 argument. */
+        fprintf(stderr,
+                "uchardet-tests expects exactly 1 argument\n");
+        return 1;
+    }
+
+    filename = strdup(argv[1
