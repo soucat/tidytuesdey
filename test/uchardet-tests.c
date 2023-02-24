@@ -94,4 +94,23 @@ main(int argc, char ** argv)
         return 1;
     }
 
-    filename = strdup(argv[1
+    filename = strdup(argv[1]);
+    f = fopen(filename, "r");
+    if (f == NULL)
+    {
+        /* Error opening the test file. */
+        fprintf(stderr,
+                "uchardet-tests: error opening the test file\n");
+        return 1;
+    }
+
+    expected_charset = strrchr(filename, '/');
+    if (expected_charset == NULL)
+    {
+        expected_charset = filename;
+    }
+    else
+    {
+        expected_charset++;
+    }
+    expected_char
