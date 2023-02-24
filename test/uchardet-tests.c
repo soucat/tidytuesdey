@@ -113,4 +113,16 @@ main(int argc, char ** argv)
     {
         expected_charset++;
     }
-    expected_char
+    expected_charset = strtok(expected_charset, ".");
+
+    charset = detect(f);
+    fclose (f);
+
+    /* In a unit test, 0 means success, other returned values mean failure. */
+    success = (strcmp(charset, expected_charset) != 0);
+
+    free(charset);
+    free(filename);
+
+    return success;
+}
